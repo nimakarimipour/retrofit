@@ -29,6 +29,10 @@ annotationEditor {
   subProjects = ["caffeine"]
 }
 
+diagnoseMode {
+  fixPath = "/tmp/NullAwayFix/diagnose.json"
+}
+
 repositories {
   mavenLocal()
   mavenCentral()
