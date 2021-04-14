@@ -1,4 +1,3 @@
-import net.ltgt.gradle.errorprone.CheckSeverity
 import org.gradle.internal.jvm.Jvm
 
 buildscript {
@@ -40,12 +39,10 @@ buildscript {
 
   dependencies {
     classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:${versions.kotlin}"
-    classpath 'net.ltgt.gradle:gradle-errorprone-plugin:0.8.1'
     classpath 'com.android.tools.build:gradle:3.6.2'
     classpath 'com.vanniktech:gradle-maven-publish-plugin:0.9.0'
     classpath 'com.google.protobuf:protobuf-gradle-plugin:0.8.12'
     classpath 'ru.vyarus:gradle-animalsniffer-plugin:1.5.0'
-    classpath 'gradle.plugin.com.github.sherter.google-java-format:google-java-format-gradle-plugin:0.9'
     classpath "com.mobidevelop.robovm:robovm-gradle-plugin:${versions.robovm}"
   }
   repositories {
@@ -69,25 +66,6 @@ subprojects {
     task.targetCompatibility = JavaVersion.VERSION_1_8
   }
 
-  apply plugin: 'net.ltgt.errorprone'
-
-  dependencies {
-    errorproneJavac 'com.google.errorprone:javac:9+181-r4173-1'
-    errorprone 'com.google.errorprone:error_prone_core:2.4.0'
-  }
-
-  tasks.withType(JavaCompile).configureEach { task ->
-    task.options.errorprone {
-      excludedPaths = '.*/build/generated/source/proto/.*'
-      check('MissingFail', CheckSeverity.ERROR)
-      check('MissingOverride', CheckSeverity.ERROR)
-      check('UnusedException', CheckSeverity.ERROR)
-      check('UnusedMethod', CheckSeverity.ERROR)
-      check('UnusedNestedClass', CheckSeverity.ERROR)
-      check('UnusedVariable', CheckSeverity.ERROR)
-    }
-  }
-
   plugins.withId('java-library') {
     // Animal Sniffer only works on JDK 11 or older currently.
     if (!Jvm.current().javaVersion.isJava12Compatible()) {
@@ -103,31 +81,6 @@ subprojects {
             project.path != ':retrofit-adapters:java8') {
           signature 'net.sf.androidscents.signature:android-api-level-21:5.0.1_r2@signature'
         }
-      }
-    }
-
-    // google-java-format only works on JDK 11 or newer.
-    if (Jvm.current().javaVersion.isJava11Compatible()) {
-      project.apply plugin: 'com.github.sherter.google-java-format'
-      googleJavaFormat {
-        toolVersion = '1.8'
-
-        // By default, the GJF plugin includes all Java folders inside the project directory. This
-        // does not work well with nested projects, especially when you want to exclude them.
-        source = sourceSets*.allJava
-      }
-      afterEvaluate {
-        def verify = tasks.getByName('verifyGoogleJavaFormat')
-        tasks.getByName('check').dependsOn(verify)
-        def prompt = tasks.create('promptGoogleJavaFormat') {
-          doLast {
-            println()
-            println('To automatically format, run "./gradlew googleJavaFormat"')
-            println()
-          }
-          onlyIf { verify.state.failure != null }
-        }
-        verify.finalizedBy(prompt)
       }
     }
   }
