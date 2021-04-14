@@ -15,11 +15,12 @@
  */
 package retrofit2;
 
+import javax.annotation.Nullable;
+
 import static retrofit2.Utils.throwIfFatal;
 
 import java.io.IOException;
 import java.util.Objects;
-import javax.annotation.Nullable;
 import javax.annotation.concurrent.GuardedBy;
 import okhttp3.MediaType;
 import okhttp3.Request;
@@ -282,7 +283,7 @@ final class OkHttpCall<T> implements Call<T> {
       this.contentLength = contentLength;
     }
 
-    @Override
+    @Override@Nullable
     public MediaType contentType() {
       return contentType;
     }

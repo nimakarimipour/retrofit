@@ -15,6 +15,8 @@
  */
 package retrofit2;
 
+import javax.annotation.Nullable;
+
 import static retrofit2.Utils.getRawType;
 import static retrofit2.Utils.methodError;
 
@@ -22,11 +24,9 @@ import java.lang.annotation.Annotation;
 import java.lang.reflect.Method;
 import java.lang.reflect.ParameterizedType;
 import java.lang.reflect.Type;
-import javax.annotation.Nullable;
 import kotlin.coroutines.Continuation;
 import okhttp3.ResponseBody;
 
-/** Adapts an invocation of an interface method into an HTTP call. */
 abstract class HttpServiceMethod<ResponseT, ReturnT> extends ServiceMethod<ReturnT> {
   /**
    * Inspects the annotations on an interface method to construct a reusable service method that
@@ -178,7 +178,7 @@ abstract class HttpServiceMethod<ResponseT, ReturnT> extends ServiceMethod<Retur
       this.callAdapter = callAdapter;
     }
 
-    @Override
+    @Override@Nullable
     protected Object adapt(Call<ResponseT> call, Object[] args) {
       call = callAdapter.adapt(call);
 
@@ -210,7 +210,7 @@ abstract class HttpServiceMethod<ResponseT, ReturnT> extends ServiceMethod<Retur
       this.isNullable = isNullable;
     }
 
-    @Override
+    @Override@Nullable
     protected Object adapt(Call<ResponseT> call, Object[] args) {
       call = callAdapter.adapt(call);
 
