@@ -283,6 +283,7 @@ final class OkHttpCall<T> implements Call<T> {
     }
 
     @Override
+    @Nullable
     public MediaType contentType() {
       return contentType;
     }
