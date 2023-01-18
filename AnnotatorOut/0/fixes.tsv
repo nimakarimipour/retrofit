@@ -1,0 +1,2 @@
+kind	class	method	param	index	uri	reason	annotation	rootClass	rootMethod
+FIELD	retrofit2.RequestFactory	null	httpMethod	null	/tmp/projects/retrofit/retrofit/src/main/java/retrofit2/RequestFactory.java	ASSIGN_FIELD_NULLABLE	nullable	retrofit2.RequestFactory	RequestFactory(retrofit2.RequestFactory.Builder)
