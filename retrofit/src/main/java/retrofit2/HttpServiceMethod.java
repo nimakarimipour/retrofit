@@ -178,7 +178,7 @@ abstract class HttpServiceMethod<ResponseT, ReturnT> extends ServiceMethod<Retur
       this.callAdapter = callAdapter;
     }
 
-    @Override
+    @Nullable @Override
     protected Object adapt(Call<ResponseT> call, Object[] args) {
       call = callAdapter.adapt(call);
 
@@ -210,7 +210,7 @@ abstract class HttpServiceMethod<ResponseT, ReturnT> extends ServiceMethod<Retur
       this.isNullable = isNullable;
     }
 
-    @Override
+    @Nullable @Override
     protected Object adapt(Call<ResponseT> call, Object[] args) {
       call = callAdapter.adapt(call);
 
