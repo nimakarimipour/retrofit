@@ -69,14 +69,14 @@ final class RequestFactory {
 
   private final Method method;
   private final HttpUrl baseUrl;
-  final String httpMethod;
+  @Nullable final String httpMethod;
   private final @Nullable String relativeUrl;
   private final @Nullable Headers headers;
   private final @Nullable MediaType contentType;
   private final boolean hasBody;
   private final boolean isFormEncoded;
   private final boolean isMultipart;
-  private final ParameterHandler<?>[] parameterHandlers;
+  @Nullable private final ParameterHandler<?>[] parameterHandlers;
   final boolean isKotlinSuspendFunction;
 
   RequestFactory(Builder builder) {
