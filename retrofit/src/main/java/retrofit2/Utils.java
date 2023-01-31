@@ -39,12 +39,12 @@ final class Utils {
     // No instances.
   }
 
-  static RuntimeException methodError(Method method, String message, Object... args) {
+  static RuntimeException methodError(Method method, String message, @Nullable Object... args) {
     return methodError(method, null, message, args);
   }
 
   static RuntimeException methodError(
-      Method method, @Nullable Throwable cause, String message, Object... args) {
+      Method method, @Nullable Throwable cause, String message, @Nullable Object... args) {
     message = String.format(message, args);
     return new IllegalArgumentException(
         message
@@ -60,7 +60,7 @@ final class Utils {
     return methodError(method, cause, message + " (parameter #" + (p + 1) + ")", args);
   }
 
-  static RuntimeException parameterError(Method method, int p, String message, Object... args) {
+  static RuntimeException parameterError(Method method, int p, String message, @Nullable Object... args) {
     return methodError(method, message + " (parameter #" + (p + 1) + ")", args);
   }
 

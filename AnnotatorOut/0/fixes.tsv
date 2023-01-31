@@ -1,0 +1,2 @@
+kind	class	method	param	index	uri	reason	annotation	rootClass	rootMethod
+PARAMETER	retrofit2.RequestBuilder	RequestBuilder(java.lang.String,okhttp3.HttpUrl,java.lang.String,okhttp3.Headers,okhttp3.MediaType,boolean,boolean,boolean)	method	0	/tmp/projects/retrofit/retrofit/src/main/java/retrofit2/RequestBuilder.java	PASS_NULLABLE	nullable	retrofit2.RequestFactory	create(java.lang.Object[])

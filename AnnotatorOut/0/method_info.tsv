@@ -1,0 +1,310 @@
+id	class	method	parent	size	flags	nullable	visibility	non-primitive-return	uri
+1	retrofit2.Call	execute()	0	0	[]	false	public	true	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/Call.java
+2	retrofit2.Call	enqueue(retrofit2.Callback<T>)	0	1	[false]	false	public	false	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/Call.java
+3	retrofit2.Call	isExecuted()	0	0	[]	false	public	false	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/Call.java
+4	retrofit2.Call	cancel()	0	0	[]	false	public	false	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/Call.java
+5	retrofit2.Call	isCanceled()	0	0	[]	false	public	false	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/Call.java
+6	retrofit2.Call	clone()	0	0	[]	false	public	true	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/Call.java
+7	retrofit2.Call	request()	0	0	[]	false	public	true	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/Call.java
+8	retrofit2.Call	timeout()	0	0	[]	false	public	true	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/Call.java
+9	retrofit2.Response	<T>success(T)	0	1	[true]	false	public	true	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/Response.java
+10	retrofit2.Response	<T>success(int,T)	0	2	[false, true]	false	public	true	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/Response.java
+11	retrofit2.Response	<T>success(T,okhttp3.Headers)	0	2	[true, false]	false	public	true	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/Response.java
+12	retrofit2.Response	<T>success(T,okhttp3.Response)	0	2	[true, false]	false	public	true	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/Response.java
+13	retrofit2.Response	<T>error(int,okhttp3.ResponseBody)	0	2	[false, false]	false	public	true	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/Response.java
+14	retrofit2.Response	<T>error(okhttp3.ResponseBody,okhttp3.Response)	0	2	[false, false]	false	public	true	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/Response.java
+15	retrofit2.Response	Response(okhttp3.Response,T,okhttp3.ResponseBody)	0	3	[false, true, true]	false	private	false	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/Response.java
+16	retrofit2.Response	raw()	0	0	[]	false	public	true	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/Response.java
+17	retrofit2.Response	code()	0	0	[]	false	public	false	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/Response.java
+18	retrofit2.Response	message()	0	0	[]	false	public	true	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/Response.java
+19	retrofit2.Response	headers()	0	0	[]	false	public	true	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/Response.java
+20	retrofit2.Response	isSuccessful()	0	0	[]	false	public	false	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/Response.java
+21	retrofit2.Response	body()	0	0	[]	true	public	true	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/Response.java
+22	retrofit2.Response	errorBody()	0	0	[]	true	public	true	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/Response.java
+23	retrofit2.Response	toString()	24	0	[]	false	public	true	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/Response.java
+25	retrofit2.Callback	onResponse(retrofit2.Call<T>,retrofit2.Response<T>)	0	2	[false, false]	false	public	false	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/Callback.java
+26	retrofit2.Callback	onFailure(retrofit2.Call<T>,java.lang.Throwable)	0	2	[false, false]	false	public	false	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/Callback.java
+27	retrofit2.Retrofit	Retrofit(okhttp3.Call.Factory,okhttp3.HttpUrl,java.util.List<retrofit2.Converter.Factory>,java.util.List<retrofit2.CallAdapter.Factory>,java.util.concurrent.Executor,boolean)	0	6	[false, false, false, false, true, false]	false	package	false	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/Retrofit.java
+28	retrofit2.Retrofit	<T>create(java.lang.Class<T>)	0	1	[false]	false	public	true	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/Retrofit.java
+29	retrofit2.Retrofit$1	invoke(java.lang.Object,java.lang.reflect.Method,java.lang.Object[])	30	3	[false, false, true]	true	public	true	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/Retrofit.java
+31	retrofit2.Retrofit	validateServiceInterface(java.lang.Class<?>)	0	1	[false]	false	private	false	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/Retrofit.java
+32	retrofit2.Retrofit	loadServiceMethod(java.lang.reflect.Method)	0	1	[false]	false	package	true	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/Retrofit.java
+33	retrofit2.Retrofit	callFactory()	0	0	[]	false	public	true	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/Retrofit.java
+34	retrofit2.Retrofit	baseUrl()	0	0	[]	false	public	true	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/Retrofit.java
+35	retrofit2.Retrofit	callAdapterFactories()	0	0	[]	false	public	true	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/Retrofit.java
+36	retrofit2.Retrofit	callAdapter(java.lang.reflect.Type,java.lang.annotation.Annotation[])	0	2	[false, false]	false	public	true	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/Retrofit.java
+37	retrofit2.Retrofit	nextCallAdapter(retrofit2.CallAdapter.Factory,java.lang.reflect.Type,java.lang.annotation.Annotation[])	0	3	[true, false, false]	false	public	true	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/Retrofit.java
+38	retrofit2.Retrofit	converterFactories()	0	0	[]	false	public	true	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/Retrofit.java
+39	retrofit2.Retrofit	<T>requestBodyConverter(java.lang.reflect.Type,java.lang.annotation.Annotation[],java.lang.annotation.Annotation[])	0	3	[false, false, false]	false	public	true	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/Retrofit.java
+40	retrofit2.Retrofit	<T>nextRequestBodyConverter(retrofit2.Converter.Factory,java.lang.reflect.Type,java.lang.annotation.Annotation[],java.lang.annotation.Annotation[])	0	4	[true, false, false, false]	false	public	true	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/Retrofit.java
+41	retrofit2.Retrofit	<T>responseBodyConverter(java.lang.reflect.Type,java.lang.annotation.Annotation[])	0	2	[false, false]	false	public	true	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/Retrofit.java
+42	retrofit2.Retrofit	<T>nextResponseBodyConverter(retrofit2.Converter.Factory,java.lang.reflect.Type,java.lang.annotation.Annotation[])	0	3	[true, false, false]	false	public	true	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/Retrofit.java
+43	retrofit2.Retrofit	<T>stringConverter(java.lang.reflect.Type,java.lang.annotation.Annotation[])	0	2	[false, false]	false	public	true	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/Retrofit.java
+44	retrofit2.Retrofit	callbackExecutor()	0	0	[]	true	public	true	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/Retrofit.java
+45	retrofit2.Retrofit	newBuilder()	0	0	[]	false	public	true	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/Retrofit.java
+46	retrofit2.Retrofit$Builder	Builder(retrofit2.Platform)	0	1	[false]	false	package	false	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/Retrofit.java
+47	retrofit2.Retrofit$Builder	Builder()	0	0	[]	false	public	false	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/Retrofit.java
+48	retrofit2.Retrofit$Builder	Builder(retrofit2.Retrofit)	0	1	[false]	false	package	false	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/Retrofit.java
+49	retrofit2.Retrofit$Builder	client(okhttp3.OkHttpClient)	0	1	[false]	false	public	true	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/Retrofit.java
+50	retrofit2.Retrofit$Builder	callFactory(okhttp3.Call.Factory)	0	1	[false]	false	public	true	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/Retrofit.java
+51	retrofit2.Retrofit$Builder	baseUrl(java.net.URL)	0	1	[false]	false	public	true	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/Retrofit.java
+52	retrofit2.Retrofit$Builder	baseUrl(java.lang.String)	0	1	[false]	false	public	true	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/Retrofit.java
+53	retrofit2.Retrofit$Builder	baseUrl(okhttp3.HttpUrl)	0	1	[false]	false	public	true	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/Retrofit.java
+54	retrofit2.Retrofit$Builder	addConverterFactory(retrofit2.Converter.Factory)	0	1	[false]	false	public	true	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/Retrofit.java
+55	retrofit2.Retrofit$Builder	addCallAdapterFactory(retrofit2.CallAdapter.Factory)	0	1	[false]	false	public	true	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/Retrofit.java
+56	retrofit2.Retrofit$Builder	callbackExecutor(java.util.concurrent.Executor)	0	1	[false]	false	public	true	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/Retrofit.java
+57	retrofit2.Retrofit$Builder	callAdapterFactories()	0	0	[]	false	public	true	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/Retrofit.java
+58	retrofit2.Retrofit$Builder	converterFactories()	0	0	[]	false	public	true	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/Retrofit.java
+59	retrofit2.Retrofit$Builder	validateEagerly(boolean)	0	1	[false]	false	public	true	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/Retrofit.java
+60	retrofit2.Retrofit$Builder	build()	0	0	[]	false	public	true	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/Retrofit.java
+61	retrofit2.Utils	Utils()	0	0	[]	false	private	false	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/Utils.java
+62	retrofit2.Utils	methodError(java.lang.reflect.Method,java.lang.String,java.lang.Object...)	0	3	[false, false, true]	false	package	true	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/Utils.java
+63	retrofit2.Utils	methodError(java.lang.reflect.Method,java.lang.Throwable,java.lang.String,java.lang.Object...)	0	4	[false, true, false, true]	false	package	true	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/Utils.java
+64	retrofit2.Utils	parameterError(java.lang.reflect.Method,java.lang.Throwable,int,java.lang.String,java.lang.Object...)	0	5	[false, false, false, false, false]	false	package	true	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/Utils.java
+65	retrofit2.Utils	parameterError(java.lang.reflect.Method,int,java.lang.String,java.lang.Object...)	0	4	[false, false, false, true]	false	package	true	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/Utils.java
+66	retrofit2.Utils	getRawType(java.lang.reflect.Type)	0	1	[false]	false	package	true	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/Utils.java
+67	retrofit2.Utils	equals(java.lang.reflect.Type,java.lang.reflect.Type)	0	2	[false, false]	false	package	false	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/Utils.java
+68	retrofit2.Utils	getGenericSupertype(java.lang.reflect.Type,java.lang.Class<?>,java.lang.Class<?>)	0	3	[false, false, false]	false	package	true	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/Utils.java
+69	retrofit2.Utils	indexOf(java.lang.Object[],java.lang.Object)	0	2	[false, false]	false	private	false	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/Utils.java
+70	retrofit2.Utils	typeToString(java.lang.reflect.Type)	0	1	[false]	false	package	true	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/Utils.java
+71	retrofit2.Utils	getSupertype(java.lang.reflect.Type,java.lang.Class<?>,java.lang.Class<?>)	0	3	[false, false, false]	false	package	true	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/Utils.java
+72	retrofit2.Utils	resolve(java.lang.reflect.Type,java.lang.Class<?>,java.lang.reflect.Type)	0	3	[false, false, false]	false	package	true	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/Utils.java
+73	retrofit2.Utils	resolveTypeVariable(java.lang.reflect.Type,java.lang.Class<?>,java.lang.reflect.TypeVariable<?>)	0	3	[false, false, false]	false	private	true	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/Utils.java
+74	retrofit2.Utils	declaringClassOf(java.lang.reflect.TypeVariable<?>)	0	1	[false]	true	private	true	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/Utils.java
+75	retrofit2.Utils	checkNotPrimitive(java.lang.reflect.Type)	0	1	[false]	false	package	false	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/Utils.java
+76	retrofit2.Utils	isAnnotationPresent(java.lang.annotation.Annotation[],java.lang.Class<? extends java.lang.annotation.Annotation>)	0	2	[false, false]	false	package	false	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/Utils.java
+77	retrofit2.Utils	buffer(okhttp3.ResponseBody)	0	1	[false]	false	package	true	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/Utils.java
+78	retrofit2.Utils	getParameterUpperBound(int,java.lang.reflect.ParameterizedType)	0	2	[false, false]	false	package	true	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/Utils.java
+79	retrofit2.Utils	getParameterLowerBound(int,java.lang.reflect.ParameterizedType)	0	2	[false, false]	false	package	true	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/Utils.java
+80	retrofit2.Utils	hasUnresolvableType(java.lang.reflect.Type)	0	1	[true]	false	package	false	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/Utils.java
+81	retrofit2.Utils$ParameterizedTypeImpl	ParameterizedTypeImpl(java.lang.reflect.Type,java.lang.reflect.Type,java.lang.reflect.Type...)	0	3	[true, false, false]	false	package	false	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/Utils.java
+82	retrofit2.Utils$ParameterizedTypeImpl	getActualTypeArguments()	83	0	[]	false	public	true	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/Utils.java
+84	retrofit2.Utils$ParameterizedTypeImpl	getRawType()	85	0	[]	false	public	true	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/Utils.java
+86	retrofit2.Utils$ParameterizedTypeImpl	getOwnerType()	87	0	[]	true	public	true	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/Utils.java
+88	retrofit2.Utils$ParameterizedTypeImpl	equals(java.lang.Object)	89	1	[false]	false	public	false	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/Utils.java
+90	retrofit2.Utils$ParameterizedTypeImpl	hashCode()	91	0	[]	false	public	false	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/Utils.java
+92	retrofit2.Utils$ParameterizedTypeImpl	toString()	24	0	[]	false	public	true	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/Utils.java
+93	retrofit2.Utils$GenericArrayTypeImpl	GenericArrayTypeImpl(java.lang.reflect.Type)	0	1	[false]	false	package	false	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/Utils.java
+94	retrofit2.Utils$GenericArrayTypeImpl	getGenericComponentType()	95	0	[]	false	public	true	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/Utils.java
+96	retrofit2.Utils$GenericArrayTypeImpl	equals(java.lang.Object)	89	1	[false]	false	public	false	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/Utils.java
+97	retrofit2.Utils$GenericArrayTypeImpl	hashCode()	91	0	[]	false	public	false	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/Utils.java
+98	retrofit2.Utils$GenericArrayTypeImpl	toString()	24	0	[]	false	public	true	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/Utils.java
+99	retrofit2.Utils$WildcardTypeImpl	WildcardTypeImpl(java.lang.reflect.Type[],java.lang.reflect.Type[])	0	2	[false, false]	false	package	false	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/Utils.java
+100	retrofit2.Utils$WildcardTypeImpl	getUpperBounds()	101	0	[]	false	public	true	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/Utils.java
+102	retrofit2.Utils$WildcardTypeImpl	getLowerBounds()	103	0	[]	false	public	true	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/Utils.java
+104	retrofit2.Utils$WildcardTypeImpl	equals(java.lang.Object)	89	1	[false]	false	public	false	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/Utils.java
+105	retrofit2.Utils$WildcardTypeImpl	hashCode()	91	0	[]	false	public	false	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/Utils.java
+106	retrofit2.Utils$WildcardTypeImpl	toString()	24	0	[]	false	public	true	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/Utils.java
+107	retrofit2.Utils	throwIfFatal(java.lang.Throwable)	0	1	[false]	false	package	false	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/Utils.java
+108	retrofit2.ServiceMethod	<T>parseAnnotations(retrofit2.Retrofit,java.lang.reflect.Method)	0	2	[false, false]	false	package	true	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/ServiceMethod.java
+109	retrofit2.ServiceMethod	invoke(java.lang.Object[])	0	1	[false]	true	package	true	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/ServiceMethod.java
+110	retrofit2.Converter	convert(F)	0	1	[false]	true	public	true	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/Converter.java
+111	retrofit2.Converter$Factory	responseBodyConverter(java.lang.reflect.Type,java.lang.annotation.Annotation[],retrofit2.Retrofit)	0	3	[false, false, false]	true	public	true	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/Converter.java
+112	retrofit2.Converter$Factory	requestBodyConverter(java.lang.reflect.Type,java.lang.annotation.Annotation[],java.lang.annotation.Annotation[],retrofit2.Retrofit)	0	4	[false, false, false, false]	true	public	true	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/Converter.java
+113	retrofit2.Converter$Factory	stringConverter(java.lang.reflect.Type,java.lang.annotation.Annotation[],retrofit2.Retrofit)	0	3	[false, false, false]	true	public	true	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/Converter.java
+114	retrofit2.Converter$Factory	getParameterUpperBound(int,java.lang.reflect.ParameterizedType)	0	2	[false, false]	false	protected	true	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/Converter.java
+115	retrofit2.Converter$Factory	getRawType(java.lang.reflect.Type)	0	1	[false]	false	protected	true	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/Converter.java
+116	retrofit2.CallAdapter	responseType()	0	0	[]	false	public	true	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/CallAdapter.java
+117	retrofit2.CallAdapter	adapt(retrofit2.Call<R>)	0	1	[false]	false	public	true	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/CallAdapter.java
+118	retrofit2.CallAdapter$Factory	get(java.lang.reflect.Type,java.lang.annotation.Annotation[],retrofit2.Retrofit)	0	3	[false, false, false]	true	public	true	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/CallAdapter.java
+119	retrofit2.CallAdapter$Factory	getParameterUpperBound(int,java.lang.reflect.ParameterizedType)	0	2	[false, false]	false	protected	true	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/CallAdapter.java
+120	retrofit2.CallAdapter$Factory	getRawType(java.lang.reflect.Type)	0	1	[false]	false	protected	true	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/CallAdapter.java
+121	retrofit2.Platform	get()	0	0	[]	false	package	true	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/Platform.java
+122	retrofit2.Platform	findPlatform()	0	0	[]	false	private	true	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/Platform.java
+123	retrofit2.Platform	Platform(boolean)	0	1	[false]	false	package	false	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/Platform.java
+124	retrofit2.Platform	defaultCallbackExecutor()	0	0	[]	true	package	true	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/Platform.java
+125	retrofit2.Platform	defaultCallAdapterFactories(java.util.concurrent.Executor)	0	1	[true]	false	package	true	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/Platform.java
+126	retrofit2.Platform	defaultCallAdapterFactoriesSize()	0	0	[]	false	package	false	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/Platform.java
+127	retrofit2.Platform	defaultConverterFactories()	0	0	[]	false	package	true	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/Platform.java
+128	retrofit2.Platform	defaultConverterFactoriesSize()	0	0	[]	false	package	false	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/Platform.java
+129	retrofit2.Platform	isDefaultMethod(java.lang.reflect.Method)	0	1	[false]	false	package	false	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/Platform.java
+130	retrofit2.Platform	invokeDefaultMethod(java.lang.reflect.Method,java.lang.Class<?>,java.lang.Object,java.lang.Object...)	0	4	[false, false, false, false]	true	package	true	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/Platform.java
+131	retrofit2.Platform$Android	Android()	0	0	[]	false	package	false	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/Platform.java
+132	retrofit2.Platform$Android	defaultCallbackExecutor()	124	0	[]	false	public	true	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/Platform.java
+133	retrofit2.Platform$Android	invokeDefaultMethod(java.lang.reflect.Method,java.lang.Class<?>,java.lang.Object,java.lang.Object...)	130	4	[false, false, false, false]	true	package	true	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/Platform.java
+134	retrofit2.Platform$Android$MainThreadExecutor	execute(java.lang.Runnable)	135	1	[false]	false	public	false	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/Platform.java
+136	retrofit2.OkHttpCall	OkHttpCall(retrofit2.RequestFactory,java.lang.Object[],okhttp3.Call.Factory,retrofit2.Converter<okhttp3.ResponseBody,T>)	0	4	[false, false, false, false]	false	package	false	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/OkHttpCall.java
+137	retrofit2.OkHttpCall	clone()	6	0	[]	false	public	true	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/OkHttpCall.java
+138	retrofit2.OkHttpCall	request()	7	0	[]	false	public	true	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/OkHttpCall.java
+139	retrofit2.OkHttpCall	timeout()	8	0	[]	false	public	true	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/OkHttpCall.java
+140	retrofit2.OkHttpCall	getRawCall()	0	0	[]	false	private	true	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/OkHttpCall.java
+141	retrofit2.OkHttpCall	enqueue(retrofit2.Callback<T>)	2	1	[false]	false	public	false	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/OkHttpCall.java
+142	retrofit2.OkHttpCall$1	onResponse(okhttp3.Call,okhttp3.Response)	143	2	[false, false]	false	public	false	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/OkHttpCall.java
+144	retrofit2.OkHttpCall$1	onFailure(okhttp3.Call,java.io.IOException)	145	2	[false, false]	false	public	false	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/OkHttpCall.java
+146	retrofit2.OkHttpCall$1	callFailure(java.lang.Throwable)	0	1	[false]	false	private	false	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/OkHttpCall.java
+147	retrofit2.OkHttpCall	isExecuted()	3	0	[]	false	public	false	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/OkHttpCall.java
+148	retrofit2.OkHttpCall	execute()	1	0	[]	false	public	true	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/OkHttpCall.java
+149	retrofit2.OkHttpCall	createRawCall()	0	0	[]	false	private	true	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/OkHttpCall.java
+150	retrofit2.OkHttpCall	parseResponse(okhttp3.Response)	0	1	[false]	false	package	true	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/OkHttpCall.java
+151	retrofit2.OkHttpCall	cancel()	4	0	[]	false	public	false	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/OkHttpCall.java
+152	retrofit2.OkHttpCall	isCanceled()	5	0	[]	false	public	false	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/OkHttpCall.java
+153	retrofit2.OkHttpCall$NoContentResponseBody	NoContentResponseBody(okhttp3.MediaType,long)	0	2	[true, false]	false	package	false	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/OkHttpCall.java
+154	retrofit2.OkHttpCall$NoContentResponseBody	contentType()	155	0	[]	true	public	true	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/OkHttpCall.java
+156	retrofit2.OkHttpCall$NoContentResponseBody	contentLength()	157	0	[]	false	public	false	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/OkHttpCall.java
+158	retrofit2.OkHttpCall$NoContentResponseBody	source()	159	0	[]	false	public	true	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/OkHttpCall.java
+160	retrofit2.OkHttpCall$ExceptionCatchingResponseBody	ExceptionCatchingResponseBody(okhttp3.ResponseBody)	0	1	[false]	false	package	false	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/OkHttpCall.java
+161	retrofit2.OkHttpCall$ExceptionCatchingResponseBody$1	read(okio.Buffer,long)	162	2	[false, false]	false	public	false	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/OkHttpCall.java
+163	retrofit2.OkHttpCall$ExceptionCatchingResponseBody	contentType()	155	0	[]	false	public	true	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/OkHttpCall.java
+164	retrofit2.OkHttpCall$ExceptionCatchingResponseBody	contentLength()	157	0	[]	false	public	false	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/OkHttpCall.java
+165	retrofit2.OkHttpCall$ExceptionCatchingResponseBody	source()	159	0	[]	false	public	true	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/OkHttpCall.java
+166	retrofit2.OkHttpCall$ExceptionCatchingResponseBody	close()	167	0	[]	false	public	false	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/OkHttpCall.java
+168	retrofit2.OkHttpCall$ExceptionCatchingResponseBody	throwIfCaught()	0	0	[]	false	package	false	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/OkHttpCall.java
+169	retrofit2.RequestFactory	parseAnnotations(retrofit2.Retrofit,java.lang.reflect.Method)	0	2	[false, false]	false	package	true	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/RequestFactory.java
+170	retrofit2.RequestFactory	RequestFactory(retrofit2.RequestFactory.Builder)	0	1	[false]	false	package	false	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/RequestFactory.java
+171	retrofit2.RequestFactory	create(java.lang.Object[])	0	1	[false]	false	package	true	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/RequestFactory.java
+172	retrofit2.RequestFactory$Builder	Builder(retrofit2.Retrofit,java.lang.reflect.Method)	0	2	[false, false]	false	package	false	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/RequestFactory.java
+173	retrofit2.RequestFactory$Builder	build()	0	0	[]	false	package	true	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/RequestFactory.java
+174	retrofit2.RequestFactory$Builder	parseMethodAnnotation(java.lang.annotation.Annotation)	0	1	[false]	false	private	false	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/RequestFactory.java
+175	retrofit2.RequestFactory$Builder	parseHttpMethodAndPath(java.lang.String,java.lang.String,boolean)	0	3	[false, false, false]	false	private	false	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/RequestFactory.java
+176	retrofit2.RequestFactory$Builder	parseHeaders(java.lang.String[])	0	1	[false]	false	private	true	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/RequestFactory.java
+177	retrofit2.RequestFactory$Builder	parseParameter(int,java.lang.reflect.Type,java.lang.annotation.Annotation[],boolean)	0	4	[false, false, true, false]	true	private	true	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/RequestFactory.java
+178	retrofit2.RequestFactory$Builder	parseParameterAnnotation(int,java.lang.reflect.Type,java.lang.annotation.Annotation[],java.lang.annotation.Annotation)	0	4	[false, false, false, false]	true	private	true	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/RequestFactory.java
+179	retrofit2.RequestFactory$Builder	validateResolvableType(int,java.lang.reflect.Type)	0	2	[false, false]	false	private	false	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/RequestFactory.java
+180	retrofit2.RequestFactory$Builder	validatePathName(int,java.lang.String)	0	2	[false, false]	false	private	false	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/RequestFactory.java
+181	retrofit2.RequestFactory$Builder	parsePathParameters(java.lang.String)	0	1	[false]	false	package	true	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/RequestFactory.java
+182	retrofit2.RequestFactory$Builder	boxIfPrimitive(java.lang.Class<?>)	0	1	[false]	false	private	true	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/RequestFactory.java
+183	retrofit2.ParameterHandler	apply(retrofit2.RequestBuilder,T)	0	2	[false, true]	false	package	false	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/ParameterHandler.java
+184	retrofit2.ParameterHandler	iterable()	0	0	[]	false	package	true	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/ParameterHandler.java
+185	retrofit2.ParameterHandler$1	apply(retrofit2.RequestBuilder,java.lang.Iterable<T>)	183	2	[false, true]	false	package	false	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/ParameterHandler.java
+186	retrofit2.ParameterHandler	array()	0	0	[]	false	package	true	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/ParameterHandler.java
+187	retrofit2.ParameterHandler$2	apply(retrofit2.RequestBuilder,java.lang.Object)	183	2	[false, true]	false	package	false	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/ParameterHandler.java
+188	retrofit2.ParameterHandler$RelativeUrl	RelativeUrl(java.lang.reflect.Method,int)	0	2	[false, false]	false	package	false	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/ParameterHandler.java
+189	retrofit2.ParameterHandler$RelativeUrl	apply(retrofit2.RequestBuilder,java.lang.Object)	183	2	[false, true]	false	package	false	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/ParameterHandler.java
+190	retrofit2.ParameterHandler$Header	Header(java.lang.String,retrofit2.Converter<T,java.lang.String>)	0	2	[false, false]	false	package	false	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/ParameterHandler.java
+191	retrofit2.ParameterHandler$Header	apply(retrofit2.RequestBuilder,T)	183	2	[false, true]	false	package	false	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/ParameterHandler.java
+192	retrofit2.ParameterHandler$Path	Path(java.lang.reflect.Method,int,java.lang.String,retrofit2.Converter<T,java.lang.String>,boolean)	0	5	[false, false, false, false, false]	false	package	false	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/ParameterHandler.java
+193	retrofit2.ParameterHandler$Path	apply(retrofit2.RequestBuilder,T)	183	2	[false, true]	false	package	false	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/ParameterHandler.java
+194	retrofit2.ParameterHandler$Query	Query(java.lang.String,retrofit2.Converter<T,java.lang.String>,boolean)	0	3	[false, false, false]	false	package	false	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/ParameterHandler.java
+195	retrofit2.ParameterHandler$Query	apply(retrofit2.RequestBuilder,T)	183	2	[false, true]	false	package	false	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/ParameterHandler.java
+196	retrofit2.ParameterHandler$QueryName	QueryName(retrofit2.Converter<T,java.lang.String>,boolean)	0	2	[false, false]	false	package	false	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/ParameterHandler.java
+197	retrofit2.ParameterHandler$QueryName	apply(retrofit2.RequestBuilder,T)	183	2	[false, true]	false	package	false	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/ParameterHandler.java
+198	retrofit2.ParameterHandler$QueryMap	QueryMap(java.lang.reflect.Method,int,retrofit2.Converter<T,java.lang.String>,boolean)	0	4	[false, false, false, false]	false	package	false	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/ParameterHandler.java
+199	retrofit2.ParameterHandler$QueryMap	apply(retrofit2.RequestBuilder,java.util.Map<java.lang.String,T>)	183	2	[false, true]	false	package	false	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/ParameterHandler.java
+200	retrofit2.ParameterHandler$HeaderMap	HeaderMap(java.lang.reflect.Method,int,retrofit2.Converter<T,java.lang.String>)	0	3	[false, false, false]	false	package	false	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/ParameterHandler.java
+201	retrofit2.ParameterHandler$HeaderMap	apply(retrofit2.RequestBuilder,java.util.Map<java.lang.String,T>)	183	2	[false, true]	false	package	false	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/ParameterHandler.java
+202	retrofit2.ParameterHandler$Headers	Headers(java.lang.reflect.Method,int)	0	2	[false, false]	false	package	false	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/ParameterHandler.java
+203	retrofit2.ParameterHandler$Headers	apply(retrofit2.RequestBuilder,okhttp3.Headers)	183	2	[false, true]	false	package	false	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/ParameterHandler.java
+204	retrofit2.ParameterHandler$Field	Field(java.lang.String,retrofit2.Converter<T,java.lang.String>,boolean)	0	3	[false, false, false]	false	package	false	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/ParameterHandler.java
+205	retrofit2.ParameterHandler$Field	apply(retrofit2.RequestBuilder,T)	183	2	[false, true]	false	package	false	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/ParameterHandler.java
+206	retrofit2.ParameterHandler$FieldMap	FieldMap(java.lang.reflect.Method,int,retrofit2.Converter<T,java.lang.String>,boolean)	0	4	[false, false, false, false]	false	package	false	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/ParameterHandler.java
+207	retrofit2.ParameterHandler$FieldMap	apply(retrofit2.RequestBuilder,java.util.Map<java.lang.String,T>)	183	2	[false, true]	false	package	false	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/ParameterHandler.java
+208	retrofit2.ParameterHandler$Part	Part(java.lang.reflect.Method,int,okhttp3.Headers,retrofit2.Converter<T,okhttp3.RequestBody>)	0	4	[false, false, false, false]	false	package	false	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/ParameterHandler.java
+209	retrofit2.ParameterHandler$Part	apply(retrofit2.RequestBuilder,T)	183	2	[false, true]	false	package	false	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/ParameterHandler.java
+210	retrofit2.ParameterHandler$RawPart	RawPart()	0	0	[]	false	private	false	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/ParameterHandler.java
+211	retrofit2.ParameterHandler$RawPart	apply(retrofit2.RequestBuilder,okhttp3.MultipartBody.Part)	183	2	[false, true]	false	package	false	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/ParameterHandler.java
+212	retrofit2.ParameterHandler$PartMap	PartMap(java.lang.reflect.Method,int,retrofit2.Converter<T,okhttp3.RequestBody>,java.lang.String)	0	4	[false, false, false, false]	false	package	false	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/ParameterHandler.java
+213	retrofit2.ParameterHandler$PartMap	apply(retrofit2.RequestBuilder,java.util.Map<java.lang.String,T>)	183	2	[false, true]	false	package	false	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/ParameterHandler.java
+214	retrofit2.ParameterHandler$Body	Body(java.lang.reflect.Method,int,retrofit2.Converter<T,okhttp3.RequestBody>)	0	3	[false, false, false]	false	package	false	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/ParameterHandler.java
+215	retrofit2.ParameterHandler$Body	apply(retrofit2.RequestBuilder,T)	183	2	[false, true]	false	package	false	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/ParameterHandler.java
+216	retrofit2.ParameterHandler$Tag	Tag(java.lang.Class<T>)	0	1	[false]	false	package	false	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/ParameterHandler.java
+217	retrofit2.ParameterHandler$Tag	apply(retrofit2.RequestBuilder,T)	183	2	[false, true]	false	package	false	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/ParameterHandler.java
+218	retrofit2.RequestBuilder	RequestBuilder(java.lang.String,okhttp3.HttpUrl,java.lang.String,okhttp3.Headers,okhttp3.MediaType,boolean,boolean,boolean)	0	8	[false, false, true, true, true, false, false, false]	false	package	false	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/RequestBuilder.java
+219	retrofit2.RequestBuilder	setRelativeUrl(java.lang.Object)	0	1	[false]	false	package	false	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/RequestBuilder.java
+220	retrofit2.RequestBuilder	addHeader(java.lang.String,java.lang.String)	0	2	[false, true]	false	package	false	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/RequestBuilder.java
+221	retrofit2.RequestBuilder	addHeaders(okhttp3.Headers)	0	1	[false]	false	package	false	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/RequestBuilder.java
+222	retrofit2.RequestBuilder	addPathParam(java.lang.String,java.lang.String,boolean)	0	3	[false, true, false]	false	package	false	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/RequestBuilder.java
+223	retrofit2.RequestBuilder	canonicalizeForPath(java.lang.String,boolean)	0	2	[true, false]	false	private	true	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/RequestBuilder.java
+224	retrofit2.RequestBuilder	canonicalizeForPath(okio.Buffer,java.lang.String,int,int,boolean)	0	5	[false, false, false, false, false]	false	private	false	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/RequestBuilder.java
+225	retrofit2.RequestBuilder	addQueryParam(java.lang.String,java.lang.String,boolean)	0	3	[true, true, false]	false	package	false	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/RequestBuilder.java
+226	retrofit2.RequestBuilder	addFormField(java.lang.String,java.lang.String,boolean)	0	3	[false, false, false]	false	package	false	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/RequestBuilder.java
+227	retrofit2.RequestBuilder	addPart(okhttp3.Headers,okhttp3.RequestBody)	0	2	[false, true]	false	package	false	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/RequestBuilder.java
+228	retrofit2.RequestBuilder	addPart(okhttp3.MultipartBody.Part)	0	1	[false]	false	package	false	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/RequestBuilder.java
+229	retrofit2.RequestBuilder	setBody(okhttp3.RequestBody)	0	1	[true]	false	package	false	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/RequestBuilder.java
+230	retrofit2.RequestBuilder	<T>addTag(java.lang.Class<T>,T)	0	2	[false, true]	false	package	false	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/RequestBuilder.java
+231	retrofit2.RequestBuilder	get()	0	0	[]	false	package	true	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/RequestBuilder.java
+232	retrofit2.RequestBuilder$ContentTypeOverridingRequestBody	ContentTypeOverridingRequestBody(okhttp3.RequestBody,okhttp3.MediaType)	0	2	[false, false]	false	package	false	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/RequestBuilder.java
+233	retrofit2.RequestBuilder$ContentTypeOverridingRequestBody	contentType()	234	0	[]	false	public	true	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/RequestBuilder.java
+235	retrofit2.RequestBuilder$ContentTypeOverridingRequestBody	contentLength()	236	0	[]	false	public	false	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/RequestBuilder.java
+237	retrofit2.RequestBuilder$ContentTypeOverridingRequestBody	writeTo(okio.BufferedSink)	238	1	[false]	false	public	false	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/RequestBuilder.java
+239	retrofit2.DefaultCallAdapterFactory	DefaultCallAdapterFactory(java.util.concurrent.Executor)	0	1	[true]	false	package	false	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/DefaultCallAdapterFactory.java
+240	retrofit2.DefaultCallAdapterFactory	get(java.lang.reflect.Type,java.lang.annotation.Annotation[],retrofit2.Retrofit)	118	3	[false, false, false]	true	public	true	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/DefaultCallAdapterFactory.java
+241	retrofit2.DefaultCallAdapterFactory$1	responseType()	116	0	[]	false	public	true	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/DefaultCallAdapterFactory.java
+242	retrofit2.DefaultCallAdapterFactory$1	adapt(retrofit2.Call<java.lang.Object>)	117	1	[false]	false	public	true	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/DefaultCallAdapterFactory.java
+243	retrofit2.DefaultCallAdapterFactory$ExecutorCallbackCall	ExecutorCallbackCall(java.util.concurrent.Executor,retrofit2.Call<T>)	0	2	[false, false]	false	package	false	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/DefaultCallAdapterFactory.java
+244	retrofit2.DefaultCallAdapterFactory$ExecutorCallbackCall	enqueue(retrofit2.Callback<T>)	2	1	[false]	false	public	false	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/DefaultCallAdapterFactory.java
+245	retrofit2.DefaultCallAdapterFactory$ExecutorCallbackCall$1	onResponse(retrofit2.Call<T>,retrofit2.Response<T>)	25	2	[false, false]	false	public	false	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/DefaultCallAdapterFactory.java
+246	retrofit2.DefaultCallAdapterFactory$ExecutorCallbackCall$1	onFailure(retrofit2.Call<T>,java.lang.Throwable)	26	2	[false, false]	false	public	false	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/DefaultCallAdapterFactory.java
+247	retrofit2.DefaultCallAdapterFactory$ExecutorCallbackCall	isExecuted()	3	0	[]	false	public	false	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/DefaultCallAdapterFactory.java
+248	retrofit2.DefaultCallAdapterFactory$ExecutorCallbackCall	execute()	1	0	[]	false	public	true	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/DefaultCallAdapterFactory.java
+249	retrofit2.DefaultCallAdapterFactory$ExecutorCallbackCall	cancel()	4	0	[]	false	public	false	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/DefaultCallAdapterFactory.java
+250	retrofit2.DefaultCallAdapterFactory$ExecutorCallbackCall	isCanceled()	5	0	[]	false	public	false	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/DefaultCallAdapterFactory.java
+251	retrofit2.DefaultCallAdapterFactory$ExecutorCallbackCall	clone()	6	0	[]	false	public	true	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/DefaultCallAdapterFactory.java
+252	retrofit2.DefaultCallAdapterFactory$ExecutorCallbackCall	request()	7	0	[]	false	public	true	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/DefaultCallAdapterFactory.java
+253	retrofit2.DefaultCallAdapterFactory$ExecutorCallbackCall	timeout()	8	0	[]	false	public	true	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/DefaultCallAdapterFactory.java
+254	retrofit2.http.FieldMap	encoded()	0	0	[]	false	public	false	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/http/FieldMap.java
+255	retrofit2.http.HEAD	value()	0	0	[]	false	public	true	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/http/HEAD.java
+256	retrofit2.http.Field	value()	0	0	[]	false	public	true	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/http/Field.java
+257	retrofit2.http.Field	encoded()	0	0	[]	false	public	false	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/http/Field.java
+258	retrofit2.http.Query	value()	0	0	[]	false	public	true	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/http/Query.java
+259	retrofit2.http.Query	encoded()	0	0	[]	false	public	false	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/http/Query.java
+260	retrofit2.http.Part	value()	0	0	[]	false	public	true	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/http/Part.java
+261	retrofit2.http.Part	encoding()	0	0	[]	false	public	true	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/http/Part.java
+262	retrofit2.http.PATCH	value()	0	0	[]	false	public	true	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/http/PATCH.java
+263	retrofit2.http.GET	value()	0	0	[]	false	public	true	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/http/GET.java
+264	retrofit2.http.QueryName	encoded()	0	0	[]	false	public	false	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/http/QueryName.java
+265	retrofit2.http.Headers	value()	0	0	[]	false	public	true	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/http/Headers.java
+266	retrofit2.http.HTTP	method()	0	0	[]	false	public	true	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/http/HTTP.java
+267	retrofit2.http.HTTP	path()	0	0	[]	false	public	true	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/http/HTTP.java
+268	retrofit2.http.HTTP	hasBody()	0	0	[]	false	public	false	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/http/HTTP.java
+269	retrofit2.http.POST	value()	0	0	[]	false	public	true	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/http/POST.java
+270	retrofit2.http.OPTIONS	value()	0	0	[]	false	public	true	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/http/OPTIONS.java
+271	retrofit2.http.Header	value()	0	0	[]	false	public	true	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/http/Header.java
+272	retrofit2.http.QueryMap	encoded()	0	0	[]	false	public	false	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/http/QueryMap.java
+273	retrofit2.http.PartMap	encoding()	0	0	[]	false	public	true	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/http/PartMap.java
+274	retrofit2.http.Path	value()	0	0	[]	false	public	true	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/http/Path.java
+275	retrofit2.http.Path	encoded()	0	0	[]	false	public	false	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/http/Path.java
+276	retrofit2.http.PUT	value()	0	0	[]	false	public	true	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/http/PUT.java
+277	retrofit2.http.DELETE	value()	0	0	[]	false	public	true	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/http/DELETE.java
+278	retrofit2.BuiltInConverters	responseBodyConverter(java.lang.reflect.Type,java.lang.annotation.Annotation[],retrofit2.Retrofit)	111	3	[false, false, false]	true	public	true	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/BuiltInConverters.java
+279	retrofit2.BuiltInConverters	requestBodyConverter(java.lang.reflect.Type,java.lang.annotation.Annotation[],java.lang.annotation.Annotation[],retrofit2.Retrofit)	112	4	[false, false, false, false]	true	public	true	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/BuiltInConverters.java
+280	retrofit2.BuiltInConverters$VoidResponseBodyConverter	convert(okhttp3.ResponseBody)	110	1	[false]	false	public	true	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/BuiltInConverters.java
+281	retrofit2.BuiltInConverters$UnitResponseBodyConverter	convert(okhttp3.ResponseBody)	110	1	[false]	false	public	true	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/BuiltInConverters.java
+282	retrofit2.BuiltInConverters$RequestBodyConverter	convert(okhttp3.RequestBody)	110	1	[false]	false	public	true	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/BuiltInConverters.java
+283	retrofit2.BuiltInConverters$StreamingResponseBodyConverter	convert(okhttp3.ResponseBody)	110	1	[false]	false	public	true	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/BuiltInConverters.java
+284	retrofit2.BuiltInConverters$BufferingResponseBodyConverter	convert(okhttp3.ResponseBody)	110	1	[false]	false	public	true	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/BuiltInConverters.java
+285	retrofit2.BuiltInConverters$ToStringConverter	convert(java.lang.Object)	110	1	[false]	false	public	true	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/BuiltInConverters.java
+286	retrofit2.HttpException	getMessage(retrofit2.Response<?>)	0	1	[false]	false	private	true	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/HttpException.java
+287	retrofit2.HttpException	HttpException(retrofit2.Response<?>)	0	1	[false]	false	public	false	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/HttpException.java
+288	retrofit2.HttpException	code()	0	0	[]	false	public	false	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/HttpException.java
+289	retrofit2.HttpException	message()	0	0	[]	false	public	true	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/HttpException.java
+290	retrofit2.HttpException	response()	0	0	[]	true	public	true	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/HttpException.java
+291	retrofit2.SkipCallbackExecutorImpl	ensurePresent(java.lang.annotation.Annotation[])	0	1	[false]	false	package	true	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/SkipCallbackExecutorImpl.java
+292	retrofit2.SkipCallbackExecutorImpl	annotationType()	293	0	[]	false	public	true	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/SkipCallbackExecutorImpl.java
+294	retrofit2.SkipCallbackExecutorImpl	equals(java.lang.Object)	295	1	[false]	false	public	false	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/SkipCallbackExecutorImpl.java
+296	retrofit2.SkipCallbackExecutorImpl	hashCode()	297	0	[]	false	public	false	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/SkipCallbackExecutorImpl.java
+298	retrofit2.SkipCallbackExecutorImpl	toString()	299	0	[]	false	public	true	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/SkipCallbackExecutorImpl.java
+300	retrofit2.CompletableFutureCallAdapterFactory	get(java.lang.reflect.Type,java.lang.annotation.Annotation[],retrofit2.Retrofit)	118	3	[false, false, false]	true	public	true	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/CompletableFutureCallAdapterFactory.java
+301	retrofit2.CompletableFutureCallAdapterFactory$BodyCallAdapter	BodyCallAdapter(java.lang.reflect.Type)	0	1	[false]	false	package	false	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/CompletableFutureCallAdapterFactory.java
+302	retrofit2.CompletableFutureCallAdapterFactory$BodyCallAdapter	responseType()	116	0	[]	false	public	true	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/CompletableFutureCallAdapterFactory.java
+303	retrofit2.CompletableFutureCallAdapterFactory$BodyCallAdapter	adapt(retrofit2.Call<R>)	117	1	[false]	false	public	true	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/CompletableFutureCallAdapterFactory.java
+304	retrofit2.CompletableFutureCallAdapterFactory$BodyCallAdapter$BodyCallback	BodyCallback(java.util.concurrent.CompletableFuture<R>)	0	1	[false]	false	public	false	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/CompletableFutureCallAdapterFactory.java
+305	retrofit2.CompletableFutureCallAdapterFactory$BodyCallAdapter$BodyCallback	onResponse(retrofit2.Call<R>,retrofit2.Response<R>)	25	2	[false, false]	false	public	false	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/CompletableFutureCallAdapterFactory.java
+306	retrofit2.CompletableFutureCallAdapterFactory$BodyCallAdapter$BodyCallback	onFailure(retrofit2.Call<R>,java.lang.Throwable)	26	2	[false, false]	false	public	false	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/CompletableFutureCallAdapterFactory.java
+307	retrofit2.CompletableFutureCallAdapterFactory$ResponseCallAdapter	ResponseCallAdapter(java.lang.reflect.Type)	0	1	[false]	false	package	false	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/CompletableFutureCallAdapterFactory.java
+308	retrofit2.CompletableFutureCallAdapterFactory$ResponseCallAdapter	responseType()	116	0	[]	false	public	true	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/CompletableFutureCallAdapterFactory.java
+309	retrofit2.CompletableFutureCallAdapterFactory$ResponseCallAdapter	adapt(retrofit2.Call<R>)	117	1	[false]	false	public	true	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/CompletableFutureCallAdapterFactory.java
+310	retrofit2.CompletableFutureCallAdapterFactory$ResponseCallAdapter$ResponseCallback	ResponseCallback(java.util.concurrent.CompletableFuture<retrofit2.Response<R>>)	0	1	[false]	false	public	false	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/CompletableFutureCallAdapterFactory.java
+311	retrofit2.CompletableFutureCallAdapterFactory$ResponseCallAdapter$ResponseCallback	onResponse(retrofit2.Call<R>,retrofit2.Response<R>)	25	2	[false, false]	false	public	false	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/CompletableFutureCallAdapterFactory.java
+312	retrofit2.CompletableFutureCallAdapterFactory$ResponseCallAdapter$ResponseCallback	onFailure(retrofit2.Call<R>,java.lang.Throwable)	26	2	[false, false]	false	public	false	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/CompletableFutureCallAdapterFactory.java
+313	retrofit2.CompletableFutureCallAdapterFactory$CallCancelCompletableFuture	CallCancelCompletableFuture(retrofit2.Call<?>)	0	1	[false]	false	package	false	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/CompletableFutureCallAdapterFactory.java
+314	retrofit2.CompletableFutureCallAdapterFactory$CallCancelCompletableFuture	cancel(boolean)	315	1	[false]	false	public	false	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/CompletableFutureCallAdapterFactory.java
+316	retrofit2.Invocation	of(java.lang.reflect.Method,java.util.List<?>)	0	2	[false, false]	false	public	true	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/Invocation.java
+317	retrofit2.Invocation	Invocation(java.lang.reflect.Method,java.util.List<?>)	0	2	[false, false]	false	package	false	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/Invocation.java
+318	retrofit2.Invocation	method()	0	0	[]	false	public	true	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/Invocation.java
+319	retrofit2.Invocation	arguments()	0	0	[]	false	public	true	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/Invocation.java
+320	retrofit2.Invocation	toString()	24	0	[]	false	public	true	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/Invocation.java
+321	retrofit2.OptionalConverterFactory	responseBodyConverter(java.lang.reflect.Type,java.lang.annotation.Annotation[],retrofit2.Retrofit)	111	3	[false, false, false]	true	public	true	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/OptionalConverterFactory.java
+322	retrofit2.OptionalConverterFactory$OptionalConverter	OptionalConverter(retrofit2.Converter<okhttp3.ResponseBody,T>)	0	1	[false]	false	package	false	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/OptionalConverterFactory.java
+323	retrofit2.OptionalConverterFactory$OptionalConverter	convert(okhttp3.ResponseBody)	110	1	[false]	false	public	true	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/OptionalConverterFactory.java
+324	retrofit2.HttpServiceMethod	<ResponseT,ReturnT>parseAnnotations(retrofit2.Retrofit,java.lang.reflect.Method,retrofit2.RequestFactory)	0	3	[false, false, false]	false	package	true	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/HttpServiceMethod.java
+325	retrofit2.HttpServiceMethod	<ResponseT,ReturnT>createCallAdapter(retrofit2.Retrofit,java.lang.reflect.Method,java.lang.reflect.Type,java.lang.annotation.Annotation[])	0	4	[false, false, false, false]	false	private	true	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/HttpServiceMethod.java
+326	retrofit2.HttpServiceMethod	<ResponseT>createResponseConverter(retrofit2.Retrofit,java.lang.reflect.Method,java.lang.reflect.Type)	0	3	[false, false, false]	false	private	true	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/HttpServiceMethod.java
+327	retrofit2.HttpServiceMethod	HttpServiceMethod(retrofit2.RequestFactory,okhttp3.Call.Factory,retrofit2.Converter<okhttp3.ResponseBody,ResponseT>)	0	3	[false, false, false]	false	package	false	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/HttpServiceMethod.java
+328	retrofit2.HttpServiceMethod	invoke(java.lang.Object[])	109	1	[false]	true	package	true	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/HttpServiceMethod.java
+329	retrofit2.HttpServiceMethod	adapt(retrofit2.Call<ResponseT>,java.lang.Object[])	0	2	[false, false]	true	protected	true	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/HttpServiceMethod.java
+330	retrofit2.HttpServiceMethod$CallAdapted	CallAdapted(retrofit2.RequestFactory,okhttp3.Call.Factory,retrofit2.Converter<okhttp3.ResponseBody,ResponseT>,retrofit2.CallAdapter<ResponseT,ReturnT>)	0	4	[false, false, false, false]	false	package	false	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/HttpServiceMethod.java
+331	retrofit2.HttpServiceMethod$CallAdapted	adapt(retrofit2.Call<ResponseT>,java.lang.Object[])	329	2	[false, false]	false	protected	true	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/HttpServiceMethod.java
+332	retrofit2.HttpServiceMethod$SuspendForResponse	SuspendForResponse(retrofit2.RequestFactory,okhttp3.Call.Factory,retrofit2.Converter<okhttp3.ResponseBody,ResponseT>,retrofit2.CallAdapter<ResponseT,retrofit2.Call<ResponseT>>)	0	4	[false, false, false, false]	false	package	false	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/HttpServiceMethod.java
+333	retrofit2.HttpServiceMethod$SuspendForResponse	adapt(retrofit2.Call<ResponseT>,java.lang.Object[])	329	2	[false, false]	true	protected	true	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/HttpServiceMethod.java
+334	retrofit2.HttpServiceMethod$SuspendForBody	SuspendForBody(retrofit2.RequestFactory,okhttp3.Call.Factory,retrofit2.Converter<okhttp3.ResponseBody,ResponseT>,retrofit2.CallAdapter<ResponseT,retrofit2.Call<ResponseT>>,boolean)	0	5	[false, false, false, false, false]	false	package	false	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/HttpServiceMethod.java
+335	retrofit2.HttpServiceMethod$SuspendForBody	adapt(retrofit2.Call<ResponseT>,java.lang.Object[])	329	2	[false, false]	true	protected	true	file:///tmp/projects/retrofit/retrofit/src/main/java/retrofit2/HttpServiceMethod.java
