@@ -27,6 +27,7 @@ import okhttp3.Request;
 import okhttp3.RequestBody;
 import okio.Buffer;
 import okio.BufferedSink;
+import retrofit2.NullUnmarked;
 
 final class RequestBuilder {
   private static final char[] HEX_DIGITS = {
@@ -181,7 +182,7 @@ final class RequestBuilder {
     }
   }
 
-  void addQueryParam(String name, @Nullable String value, boolean encoded) {
+  @NullUnmarked void addQueryParam(String name, @Nullable String value, boolean encoded) {
     if (relativeUrl != null) {
       // Do a one-time combination of the built relative URL and the base URL.
       urlBuilder = baseUrl.newBuilder(relativeUrl);
@@ -201,7 +202,7 @@ final class RequestBuilder {
     }
   }
 
-  @SuppressWarnings("ConstantConditions") // Only called when isFormEncoded was true.
+  @NullUnmarked @SuppressWarnings("ConstantConditions") // Only called when isFormEncoded was true.
   void addFormField(String name, String value, boolean encoded) {
     if (encoded) {
       formBuilder.addEncoded(name, value);
@@ -210,12 +211,12 @@ final class RequestBuilder {
     }
   }
 
-  @SuppressWarnings("ConstantConditions") // Only called when isMultipart was true.
+  @NullUnmarked @SuppressWarnings("ConstantConditions") // Only called when isMultipart was true.
   void addPart(Headers headers, RequestBody body) {
     multipartBuilder.addPart(headers, body);
   }
 
-  @SuppressWarnings("ConstantConditions") // Only called when isMultipart was true.
+  @NullUnmarked @SuppressWarnings("ConstantConditions") // Only called when isMultipart was true.
   void addPart(MultipartBody.Part part) {
     multipartBuilder.addPart(part);
   }

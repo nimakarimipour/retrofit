@@ -23,6 +23,7 @@ import java.util.Objects;
 import javax.annotation.Nullable;
 import okhttp3.MultipartBody;
 import okhttp3.RequestBody;
+import retrofit2.NullUnmarked;
 
 abstract class ParameterHandler<T> {
   abstract void apply(RequestBuilder builder, @Nullable T value) throws IOException;
@@ -107,7 +108,7 @@ abstract class ParameterHandler<T> {
       this.encoded = encoded;
     }
 
-    @Override
+    @NullUnmarked @Override
     void apply(RequestBuilder builder, @Nullable T value) throws IOException {
       if (value == null) {
         throw Utils.parameterError(
@@ -148,7 +149,7 @@ abstract class ParameterHandler<T> {
       this.encoded = encoded;
     }
 
-    @Override
+    @NullUnmarked @Override
     void apply(RequestBuilder builder, @Nullable T value) throws IOException {
       if (value == null) return; // Skip null values.
       builder.addQueryParam(nameConverter.convert(value), null, encoded);
@@ -215,7 +216,7 @@ abstract class ParameterHandler<T> {
       this.valueConverter = valueConverter;
     }
 
-    @Override
+    @NullUnmarked @Override
     void apply(RequestBuilder builder, @Nullable Map<String, T> value) throws IOException {
       if (value == null) {
         throw Utils.parameterError(method, p, "Header map was null.");
@@ -338,7 +339,7 @@ abstract class ParameterHandler<T> {
       this.converter = converter;
     }
 
-    @Override
+    @NullUnmarked @Override
     void apply(RequestBuilder builder, @Nullable T value) {
       if (value == null) return; // Skip null values.
 
@@ -379,7 +380,7 @@ abstract class ParameterHandler<T> {
       this.transferEncoding = transferEncoding;
     }
 
-    @Override
+    @NullUnmarked @Override
     void apply(RequestBuilder builder, @Nullable Map<String, T> value) throws IOException {
       if (value == null) {
         throw Utils.parameterError(method, p, "Part map was null.");
@@ -419,7 +420,7 @@ abstract class ParameterHandler<T> {
       this.converter = converter;
     }
 
-    @Override
+    @NullUnmarked @Override
     void apply(RequestBuilder builder, @Nullable T value) {
       if (value == null) {
         throw Utils.parameterError(method, p, "Body parameter value must not be null.");
