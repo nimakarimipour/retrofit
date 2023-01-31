@@ -61,6 +61,7 @@ import retrofit2.http.QueryMap;
 import retrofit2.http.QueryName;
 import retrofit2.http.Tag;
 import retrofit2.http.Url;
+import retrofit2.NullUnmarked;
 
 final class RequestFactory {
   static RequestFactory parseAnnotations(Retrofit retrofit, Method method) {
@@ -93,7 +94,7 @@ final class RequestFactory {
     isKotlinSuspendFunction = builder.isKotlinSuspendFunction;
   }
 
-  okhttp3.Request create(Object[] args) throws IOException {
+  @NullUnmarked okhttp3.Request create(Object[] args) throws IOException {
     @SuppressWarnings("unchecked") // It is an error to invoke a method with the wrong arg types.
     ParameterHandler<Object>[] handlers = (ParameterHandler<Object>[]) parameterHandlers;
 
@@ -353,7 +354,7 @@ final class RequestFactory {
       return result;
     }
 
-    @Nullable
+    @NullUnmarked @Nullable
     private ParameterHandler<?> parseParameterAnnotation(
         int p, Type type, Annotation[] annotations, Annotation annotation) {
       if (annotation instanceof Url) {
@@ -815,7 +816,7 @@ final class RequestFactory {
       }
     }
 
-    private void validatePathName(int p, String name) {
+    @NullUnmarked private void validatePathName(int p, String name) {
       if (!PARAM_NAME_REGEX.matcher(name).matches()) {
         throw parameterError(
             method,
