@@ -1,5 +1,5 @@
 {
-  "BUILD_COMMAND": "cd /Users/nima/Developer/NullAwayFixer/Projects/retrofit && ./gradlew compileJava",
+  "BUILD_COMMAND": "cd /Users/anonymous/Developer/NullAwayFixer/Projects/retrofit && ./gradlew compileJava",
   "ANNOTATION": {
     "INITIALIZER": "retrofit2.Initializer",
     "NULLABLE": "javax.annotation.Nullable",
