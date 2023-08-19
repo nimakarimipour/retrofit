@@ -25,7 +25,7 @@ import java.lang.reflect.Type;
 import javax.annotation.Nullable;
 import kotlin.coroutines.Continuation;
 import okhttp3.ResponseBody;
-import retrofit2.NullUnmarked;
+
 
 /** Adapts an invocation of an interface method into an HTTP call. */
 abstract class HttpServiceMethod<ResponseT, ReturnT> extends ServiceMethod<ReturnT> {
@@ -179,7 +179,7 @@ abstract class HttpServiceMethod<ResponseT, ReturnT> extends ServiceMethod<Retur
       this.callAdapter = callAdapter;
     }
 
-    @NullUnmarked @Override
+     @Override
     protected Object adapt(Call<ResponseT> call, Object[] args) {
       call = callAdapter.adapt(call);
 
@@ -211,7 +211,7 @@ abstract class HttpServiceMethod<ResponseT, ReturnT> extends ServiceMethod<Retur
       this.isNullable = isNullable;
     }
 
-    @NullUnmarked @Override
+     @Override
     protected Object adapt(Call<ResponseT> call, Object[] args) {
       call = callAdapter.adapt(call);
 

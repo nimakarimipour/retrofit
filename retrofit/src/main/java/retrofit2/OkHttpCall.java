@@ -29,7 +29,7 @@ import okio.BufferedSource;
 import okio.ForwardingSource;
 import okio.Okio;
 import okio.Timeout;
-import retrofit2.NullUnmarked;
+
 
 final class OkHttpCall<T> implements Call<T> {
   private final RequestFactory requestFactory;
@@ -113,7 +113,7 @@ final class OkHttpCall<T> implements Call<T> {
     }
   }
 
-  @NullUnmarked @Override
+   @Override
   public void enqueue(final Callback<T> callback) {
     Objects.requireNonNull(callback, "callback == null");
 
@@ -283,7 +283,7 @@ final class OkHttpCall<T> implements Call<T> {
       this.contentLength = contentLength;
     }
 
-    @NullUnmarked @Override
+     @Override
     public MediaType contentType() {
       return contentType;
     }
