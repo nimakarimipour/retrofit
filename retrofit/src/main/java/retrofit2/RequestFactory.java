@@ -77,7 +77,7 @@ final class RequestFactory {
   private final boolean hasBody;
   private final boolean isFormEncoded;
   private final boolean isMultipart;
-  private final ParameterHandler<?>[] parameterHandlers;
+  @Nullable private final ParameterHandler<?>[] parameterHandlers;
   final boolean isKotlinSuspendFunction;
 
    RequestFactory(Builder builder) {
