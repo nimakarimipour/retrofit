@@ -283,7 +283,7 @@ final class OkHttpCall<T> implements Call<T> {
       this.contentLength = contentLength;
     }
 
-     @Override
+     @Nullable @Override
     public MediaType contentType() {
       return contentType;
     }
