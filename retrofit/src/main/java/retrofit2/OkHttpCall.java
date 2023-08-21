@@ -29,6 +29,7 @@ import okio.BufferedSource;
 import okio.ForwardingSource;
 import okio.Okio;
 import okio.Timeout;
+import org.jspecify.annotations.NullUnmarked;
 
 
 final class OkHttpCall<T> implements Call<T> {
@@ -113,7 +114,7 @@ final class OkHttpCall<T> implements Call<T> {
     }
   }
 
-   @Override
+   @NullUnmarked @Override
   public void enqueue(final Callback<T> callback) {
     Objects.requireNonNull(callback, "callback == null");
 
@@ -283,7 +284,7 @@ final class OkHttpCall<T> implements Call<T> {
       this.contentLength = contentLength;
     }
 
-     @Override
+     @Nullable @Override
     public MediaType contentType() {
       return contentType;
     }
