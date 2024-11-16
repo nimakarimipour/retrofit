@@ -25,7 +25,7 @@ import okhttp3.MultipartBody;
 import okhttp3.RequestBody;
 
 abstract class ParameterHandler<T> {
-  abstract void apply(RequestBuilder builder, @Nullable T value) throws IOException;
+  abstract void apply(RequestBuilder builder, T value) throws IOException;
 
   final ParameterHandler<Iterable<T>> iterable() {
     return new ParameterHandler<Iterable<T>>() {
@@ -108,7 +108,7 @@ abstract class ParameterHandler<T> {
     }
 
     @Override
-    void apply(RequestBuilder builder, @Nullable T value) throws IOException {
+    void apply(RequestBuilder builder, T value) throws IOException {
       if (value == null) {
         throw Utils.parameterError(
             method, p, "Path parameter \"" + name + "\" value must not be null.");

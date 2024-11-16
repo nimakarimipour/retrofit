@@ -116,7 +116,7 @@ final class RequestBuilder {
     headersBuilder.addAll(headers);
   }
 
-  void addPathParam(String name, @Nullable String value, boolean encoded) {
+  void addPathParam(String name, String value, boolean encoded) {
     if (relativeUrl == null) {
       // The relative URL is cleared when the first query parameter is set.
       throw new AssertionError();
@@ -130,7 +130,7 @@ final class RequestBuilder {
     relativeUrl = newRelativeUrl;
   }
 
-  private static String canonicalizeForPath(@Nullable String input, boolean alreadyEncoded) {
+  private static String canonicalizeForPath(String input, boolean alreadyEncoded) {
     int codePoint;
     for (int i = 0, limit = input.length(); i < limit; i += Character.charCount(codePoint)) {
       codePoint = input.codePointAt(i);
