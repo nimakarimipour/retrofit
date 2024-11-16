@@ -1,3 +1,5 @@
+#!/bin/bash
+
 # Remove any old error_output_<UUID>.txt files
 rm -f nullaway_error_*.txt
 
