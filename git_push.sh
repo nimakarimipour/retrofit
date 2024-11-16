@@ -1,1 +1,1 @@
-git add . && git commit -m "resolve" && git push && git rev-parse --verify HEAD | pbcopy && pbpaste
+git add . && git commit -m "resolve" && git push && git rev-parse --verify HEAD | (if [[ "$(uname)" == "Darwin" ]]; then pbcopy; else xclip -selection clipboard; fi) && (if [[ "$(uname)" == "Darwin" ]]; then pbpaste; else xclip -selection clipboard -o; fi)
