@@ -140,6 +140,8 @@ final class OkHttpCall<T> implements Call<T> {
       return;
     }
 
+    call = Utils.castToNull(call);
+
     if (canceled) {
       call.cancel();
     }
