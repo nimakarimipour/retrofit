@@ -1,4 +1,0 @@
-/home/nima/Developer/nullness-benchmarks/retrofit/retrofit/src/main/java/retrofit2/RequestBuilder.java:197: error: [NullAway] dereferenced expression urlBuilder is @Nullable
-      urlBuilder.addEncodedQueryParameter(name, value);
-                ^
-    (see http://t.uber.com/nullaway )

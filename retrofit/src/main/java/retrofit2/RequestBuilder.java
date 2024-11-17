@@ -53,7 +53,7 @@ final class RequestBuilder {
 
   private final HttpUrl baseUrl;
   private @Nullable String relativeUrl;
-  private @Nullable HttpUrl.Builder urlBuilder;
+  private HttpUrl.Builder urlBuilder;
 
   private final Request.Builder requestBuilder;
   private final Headers.Builder headersBuilder;
@@ -75,6 +75,7 @@ final class RequestBuilder {
       boolean isMultipart) {
     this.method = method;
     this.baseUrl = baseUrl;
+    this.urlBuilder = baseUrl.newBuilder();
     this.relativeUrl = relativeUrl;
     this.requestBuilder = new Request.Builder();
     this.contentType = contentType;
@@ -231,7 +232,7 @@ final class RequestBuilder {
   Request.Builder get() {
     HttpUrl url;
     HttpUrl.Builder urlBuilder = this.urlBuilder;
-    if (urlBuilder != null) {
+    if (relativeUrl == null) {
       url = urlBuilder.build();
     } else {
       // No query parameters triggered builder creation, just combine the relative URL and base URL.

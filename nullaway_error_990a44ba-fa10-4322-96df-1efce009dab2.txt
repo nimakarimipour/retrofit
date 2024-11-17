@@ -1,0 +1,4 @@
+/home/nima/Developer/nullness-benchmarks/retrofit/retrofit/src/main/java/retrofit2/RequestBuilder.java:208: error: [NullAway] dereferenced expression formBuilder is @Nullable
+      formBuilder.addEncoded(name, value);
+                 ^
+    (see http://t.uber.com/nullaway )
