@@ -98,12 +98,12 @@ final class RequestFactory {
     ParameterHandler<Object>[] handlers = (ParameterHandler<Object>[]) parameterHandlers;
 
     int argumentCount = args.length;
-    if (argumentCount != handlers.length) {
+    if (handlers == null || argumentCount != handlers.length) {
       throw new IllegalArgumentException(
           "Argument count ("
               + argumentCount
               + ") doesn't match expected count ("
-              + handlers.length
+              + (handlers == null ? 0 : handlers.length)
               + ")");
     }
 
