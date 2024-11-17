@@ -224,6 +224,9 @@ final class RequestBuilder {
 
   @SuppressWarnings("ConstantConditions") // Only called when isMultipart was true.
   void addPart(MultipartBody.Part part) {
+    if(multipartBuilder == null){
+      throw new RuntimeException("multipartBuilder is null");
+    }
     multipartBuilder.addPart(part);
   }
 

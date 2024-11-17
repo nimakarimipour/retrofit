@@ -1,0 +1,4 @@
+/home/nima/Developer/nullness-benchmarks/retrofit/retrofit/src/main/java/retrofit2/RequestBuilder.java:227: error: [NullAway] dereferenced expression multipartBuilder is @Nullable
+    multipartBuilder.addPart(part);
+                    ^
+    (see http://t.uber.com/nullaway )
