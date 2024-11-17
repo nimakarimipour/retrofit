@@ -533,4 +533,11 @@ final class Utils {
       throw (LinkageError) t;
     }
   }
+
+  public static <T> T castToNull(@Nullable T arg){
+    if(arg == null){
+      throw new RuntimeException("arg is null");
+    }
+    return arg;
+  }
 }
