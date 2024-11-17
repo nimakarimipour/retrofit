@@ -165,7 +165,7 @@ final class RequestFactory {
     @Nullable Headers headers;
     @Nullable MediaType contentType;
     @Nullable Set<String> relativeUrlParamNames;
-    @Nullable ParameterHandler<?>[] parameterHandlers;
+    ParameterHandler<?>[] parameterHandlers;
     boolean isKotlinSuspendFunction;
 
     Builder(Retrofit retrofit, Method method) {
@@ -176,6 +176,7 @@ final class RequestFactory {
       this.parameterAnnotationsArray = method.getParameterAnnotations();
     }
 
+    @Initializer
     RequestFactory build() {
       for (Annotation annotation : methodAnnotations) {
         parseMethodAnnotation(annotation);

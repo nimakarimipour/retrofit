@@ -1,4 +1,0 @@
-/home/nima/Developer/nullness-benchmarks/retrofit/retrofit/src/main/java/retrofit2/RequestFactory.java:101: error: [NullAway] dereferenced expression handlers is @Nullable
-    if (argumentCount != handlers.length) {
-                                 ^
-    (see http://t.uber.com/nullaway )

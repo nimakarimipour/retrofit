@@ -1,0 +1,4 @@
+/home/nima/Developer/nullness-benchmarks/retrofit/retrofit/src/main/java/retrofit2/RequestFactory.java:829: error: [NullAway] dereferenced expression relativeUrlParamNames is @Nullable
+      if (!relativeUrlParamNames.contains(name)) {
+                                ^
+    (see http://t.uber.com/nullaway )
