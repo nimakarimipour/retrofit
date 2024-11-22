@@ -1,4 +1,0 @@
-/home/nima/Developer/nullness-benchmarks/retrofit/retrofit/src/main/java/retrofit2/OkHttpCall.java:145: error: [NullAway] dereferenced expression call is @Nullable
-      call.cancel();
-          ^
-    (see http://t.uber.com/nullaway )
