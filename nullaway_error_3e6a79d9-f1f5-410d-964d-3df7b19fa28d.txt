@@ -1,4 +1,0 @@
-/home/nima/Developer/nullness-benchmarks/retrofit/retrofit/src/main/java/retrofit2/RequestFactory.java:171: error: [NullAway] initializer method does not guarantee @NonNull fields httpMethod (line 160), relativeUrlParamNames (line 167), parameterHandlers (line 168) are initialized along all control-flow paths (remember to check for exceptions or early returns).
-    Builder(Retrofit retrofit, Method method) {
-    ^
-    (see http://t.uber.com/nullaway )

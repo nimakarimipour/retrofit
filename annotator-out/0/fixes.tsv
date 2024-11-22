@@ -1,5 +1,1 @@
 kind	class	method	param	index	uri	reason	annotation	rootClass	rootMethod
-FIELD	retrofit2.RequestFactory$Builder	null	httpMethod	null	/home/nima/Developer/nullness-benchmarks/retrofit/retrofit/src/main/java/retrofit2/RequestFactory.java	METHOD_NO_INIT	nullable	retrofit2.RequestFactory$Builder	null
-FIELD	retrofit2.RequestFactory$Builder	null	relativeUrlParamNames	null	/home/nima/Developer/nullness-benchmarks/retrofit/retrofit/src/main/java/retrofit2/RequestFactory.java	METHOD_NO_INIT	nullable	retrofit2.RequestFactory$Builder	null
-FIELD	retrofit2.RequestFactory$Builder	null	parameterHandlers	null	/home/nima/Developer/nullness-benchmarks/retrofit/retrofit/src/main/java/retrofit2/RequestFactory.java	METHOD_NO_INIT	nullable	retrofit2.RequestFactory$Builder	null
-FIELD	retrofit2.OkHttpCall	null	rawCall	null	/home/nima/Developer/nullness-benchmarks/retrofit/retrofit/src/main/java/retrofit2/OkHttpCall.java	METHOD_NO_INIT	nullable	retrofit2.OkHttpCall	null
