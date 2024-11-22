@@ -39,7 +39,7 @@ final class OkHttpCall<T> implements Call<T> {
   private volatile boolean canceled;
 
   @GuardedBy("this")
-  private  okhttp3.Call rawCall;
+  @Nullable private  okhttp3.Call rawCall;
 
   @Nullable @GuardedBy("this") // Either a RuntimeException, non-fatal Error, or IOException.
   private  Throwable creationFailure;
