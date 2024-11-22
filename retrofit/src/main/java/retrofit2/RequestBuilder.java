@@ -49,27 +49,27 @@ final class RequestBuilder {
    */
   private static final Pattern PATH_TRAVERSAL = Pattern.compile("(.*/)?(\\.|%2e|%2E){1,2}(/.*)?");
 
-  @Nullable private final String method;
+   private final String method;
 
   private final HttpUrl baseUrl;
-  private @Nullable String relativeUrl;
-  private @Nullable HttpUrl.Builder urlBuilder;
+  @Nullable private  String relativeUrl;
+  private  HttpUrl.Builder urlBuilder;
 
   private final Request.Builder requestBuilder;
   private final Headers.Builder headersBuilder;
-  private @Nullable MediaType contentType;
+  @Nullable private  MediaType contentType;
 
   private final boolean hasBody;
-  private @Nullable MultipartBody.Builder multipartBuilder;
-  private @Nullable FormBody.Builder formBuilder;
-  private @Nullable RequestBody body;
+  private  MultipartBody.Builder multipartBuilder;
+  private  FormBody.Builder formBuilder;
+  @Nullable private  RequestBody body;
 
   RequestBuilder(
-      @Nullable String method,
+       String method,
       HttpUrl baseUrl,
-      @Nullable String relativeUrl,
-      @Nullable Headers headers,
-      @Nullable MediaType contentType,
+       @Nullable String relativeUrl,
+       @Nullable Headers headers,
+       @Nullable MediaType contentType,
       boolean hasBody,
       boolean isFormEncoded,
       boolean isMultipart) {
@@ -100,7 +100,7 @@ final class RequestBuilder {
     this.relativeUrl = relativeUrl.toString();
   }
 
-  void addHeader(String name, @Nullable String value) {
+  void addHeader(String name,  String value) {
     if ("Content-Type".equalsIgnoreCase(name)) {
       try {
         contentType = MediaType.get(value);
@@ -116,7 +116,7 @@ final class RequestBuilder {
     headersBuilder.addAll(headers);
   }
 
-  void addPathParam(String name, @Nullable String value, boolean encoded) {
+  void addPathParam(String name,  String value, boolean encoded) {
     if (relativeUrl == null) {
       // The relative URL is cleared when the first query parameter is set.
       throw new AssertionError();
@@ -130,7 +130,7 @@ final class RequestBuilder {
     relativeUrl = newRelativeUrl;
   }
 
-  private static String canonicalizeForPath(@Nullable String input, boolean alreadyEncoded) {
+  private static String canonicalizeForPath( String input, boolean alreadyEncoded) {
     int codePoint;
     for (int i = 0, limit = input.length(); i < limit; i += Character.charCount(codePoint)) {
       codePoint = input.codePointAt(i);
@@ -181,7 +181,7 @@ final class RequestBuilder {
     }
   }
 
-  void addQueryParam(@Nullable String name, @Nullable String value, boolean encoded) {
+  void addQueryParam( String name,  @Nullable String value, boolean encoded) {
     if (relativeUrl != null) {
       // Do a one-time combination of the built relative URL and the base URL.
       urlBuilder = baseUrl.newBuilder(relativeUrl);
@@ -211,7 +211,7 @@ final class RequestBuilder {
   }
 
   @SuppressWarnings("ConstantConditions") // Only called when isMultipart was true.
-  void addPart(Headers headers, @Nullable RequestBody body) {
+  void addPart(Headers headers,  RequestBody body) {
     multipartBuilder.addPart(headers, body);
   }
 
@@ -220,11 +220,11 @@ final class RequestBuilder {
     multipartBuilder.addPart(part);
   }
 
-  void setBody(@Nullable RequestBody body) {
+  void setBody( RequestBody body) {
     this.body = body;
   }
 
-  <T> void addTag(Class<T> cls, @Nullable T value) {
+  <T> void addTag(Class<T> cls,  T value) {
     requestBuilder.tag(cls, value);
   }
 

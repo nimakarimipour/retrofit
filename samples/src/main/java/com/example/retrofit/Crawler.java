@@ -138,7 +138,7 @@ public final class Crawler {
     static final Converter.Factory FACTORY =
         new Converter.Factory() {
           @Override
-          public @Nullable Converter<ResponseBody, ?> responseBodyConverter(
+          public  Converter<ResponseBody, ?> responseBodyConverter(
               Type type, Annotation[] annotations, Retrofit retrofit) {
             if (type == Page.class) return new PageAdapter();
             return null;

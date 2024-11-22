@@ -25,7 +25,7 @@ import okhttp3.ResponseBody;
 /** An HTTP response. */
 public final class Response<T> {
   /** Create a synthetic successful response with {@code body} as the deserialized body. */
-  public static <T> Response<T> success(@Nullable T body) {
+  public static <T> Response<T> success( T body) {
     return success(
         body,
         new okhttp3.Response.Builder() //
@@ -40,7 +40,7 @@ public final class Response<T> {
    * Create a synthetic successful response with an HTTP status code of {@code code} and {@code
    * body} as the deserialized body.
    */
-  public static <T> Response<T> success(int code, @Nullable T body) {
+  public static <T> Response<T> success(int code,  T body) {
     if (code < 200 || code >= 300) {
       throw new IllegalArgumentException("code < 200 or >= 300: " + code);
     }
@@ -58,7 +58,7 @@ public final class Response<T> {
    * Create a synthetic successful response using {@code headers} with {@code body} as the
    * deserialized body.
    */
-  public static <T> Response<T> success(@Nullable T body, Headers headers) {
+  public static <T> Response<T> success( T body, Headers headers) {
     Objects.requireNonNull(headers, "headers == null");
     return success(
         body,
@@ -75,7 +75,7 @@ public final class Response<T> {
    * Create a successful response from {@code rawResponse} with {@code body} as the deserialized
    * body.
    */
-  public static <T> Response<T> success(@Nullable T body, okhttp3.Response rawResponse) {
+  public static <T> Response<T> success( @Nullable T body, okhttp3.Response rawResponse) {
     Objects.requireNonNull(rawResponse, "rawResponse == null");
     if (!rawResponse.isSuccessful()) {
       throw new IllegalArgumentException("rawResponse must be successful response");
@@ -112,11 +112,11 @@ public final class Response<T> {
   }
 
   private final okhttp3.Response rawResponse;
-  private final @Nullable T body;
-  private final @Nullable ResponseBody errorBody;
+  @Nullable private final  T body;
+  @Nullable private final  ResponseBody errorBody;
 
   private Response(
-      okhttp3.Response rawResponse, @Nullable T body, @Nullable ResponseBody errorBody) {
+      okhttp3.Response rawResponse,  @Nullable T body,  @Nullable ResponseBody errorBody) {
     this.rawResponse = rawResponse;
     this.body = body;
     this.errorBody = errorBody;
@@ -148,12 +148,12 @@ public final class Response<T> {
   }
 
   /** The deserialized response body of a {@linkplain #isSuccessful() successful} response. */
-  public @Nullable T body() {
+  @Nullable public  T body() {
     return body;
   }
 
   /** The raw response body of an {@linkplain #isSuccessful() unsuccessful} response. */
-  public @Nullable ResponseBody errorBody() {
+  @Nullable public  ResponseBody errorBody() {
     return errorBody;
   }
 

@@ -51,8 +51,8 @@ public final class MockRetrofit {
 
   public static final class Builder {
     private final Retrofit retrofit;
-    private @Nullable NetworkBehavior behavior;
-    private @Nullable ExecutorService executor;
+    private  NetworkBehavior behavior;
+    private  ExecutorService executor;
 
     @SuppressWarnings("ConstantConditions") // Guarding public API nullability.
     public Builder(Retrofit retrofit) {

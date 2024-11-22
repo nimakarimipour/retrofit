@@ -140,13 +140,13 @@ abstract class HttpServiceMethod<ResponseT, ReturnT> extends ServiceMethod<Retur
     this.responseConverter = responseConverter;
   }
 
-  @Override
-  final @Nullable ReturnT invoke(Object[] args) {
+  @Nullable @Override
+  final  ReturnT invoke(Object[] args) {
     Call<ResponseT> call = new OkHttpCall<>(requestFactory, args, callFactory, responseConverter);
     return adapt(call, args);
   }
 
-  protected abstract @Nullable ReturnT adapt(Call<ResponseT> call, Object[] args);
+  @Nullable protected abstract  ReturnT adapt(Call<ResponseT> call, Object[] args);
 
   static final class CallAdapted<ResponseT, ReturnT> extends HttpServiceMethod<ResponseT, ReturnT> {
     private final CallAdapter<ResponseT, ReturnT> callAdapter;
@@ -178,7 +178,7 @@ abstract class HttpServiceMethod<ResponseT, ReturnT> extends ServiceMethod<Retur
       this.callAdapter = callAdapter;
     }
 
-    @Nullable @Override
+     @Nullable @Override
     protected Object adapt(Call<ResponseT> call, Object[] args) {
       call = callAdapter.adapt(call);
 
@@ -210,7 +210,7 @@ abstract class HttpServiceMethod<ResponseT, ReturnT> extends ServiceMethod<Retur
       this.isNullable = isNullable;
     }
 
-    @Nullable @Override
+     @Nullable @Override
     protected Object adapt(Call<ResponseT> call, Object[] args) {
       call = callAdapter.adapt(call);
 

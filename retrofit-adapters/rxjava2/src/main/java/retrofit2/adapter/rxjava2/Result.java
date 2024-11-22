@@ -33,10 +33,10 @@ public final class Result<T> {
     return new Result<>(response, null);
   }
 
-  private final @Nullable Response<T> response;
-  private final @Nullable Throwable error;
+  private final  Response<T> response;
+  private final  Throwable error;
 
-  private Result(@Nullable Response<T> response, @Nullable Throwable error) {
+  private Result( Response<T> response,  Throwable error) {
     this.response = response;
     this.error = error;
   }
@@ -45,7 +45,7 @@ public final class Result<T> {
    * The response received from executing an HTTP request. Only present when {@link #isError()} is
    * false, null otherwise.
    */
-  public @Nullable Response<T> response() {
+  public  Response<T> response() {
     return response;
   }
 
@@ -57,7 +57,7 @@ public final class Result<T> {
    * remote server. Any other exception type indicates an unexpected failure and should be
    * considered fatal (configuration error, programming error, etc.).
    */
-  public @Nullable Throwable error() {
+  public  Throwable error() {
     return error;
   }
 

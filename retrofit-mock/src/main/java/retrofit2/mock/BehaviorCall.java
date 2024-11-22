@@ -35,7 +35,7 @@ final class BehaviorCall<T> implements Call<T> {
   final ExecutorService backgroundExecutor;
   final Call<T> delegate;
 
-  private volatile @Nullable Future<?> task;
+  private volatile  Future<?> task;
   volatile boolean canceled;
 
   @GuardedBy("this")

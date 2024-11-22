@@ -28,7 +28,7 @@ public class ToStringConverterFactory extends Converter.Factory {
   static final MediaType MEDIA_TYPE = MediaType.get("text/plain");
 
   @Override
-  public @Nullable Converter<ResponseBody, String> responseBodyConverter(
+  public  Converter<ResponseBody, String> responseBodyConverter(
       Type type, Annotation[] annotations, Retrofit retrofit) {
     if (String.class.equals(type)) {
       return ResponseBody::string;
@@ -37,7 +37,7 @@ public class ToStringConverterFactory extends Converter.Factory {
   }
 
   @Override
-  public @Nullable Converter<String, RequestBody> requestBodyConverter(
+  public  Converter<String, RequestBody> requestBodyConverter(
       Type type,
       Annotation[] parameterAnnotations,
       Annotation[] methodAnnotations,

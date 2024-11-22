@@ -231,7 +231,7 @@ public final class RetrofitTest {
   public void cloneSharesStatefulInstances() {
     CallAdapter.Factory callAdapter =
         new CallAdapter.Factory() {
-          @Nullable
+          
           @Override
           public CallAdapter<?, ?> get(
               Type returnType, Annotation[] annotations, Retrofit retrofit) {
@@ -257,7 +257,7 @@ public final class RetrofitTest {
 
     CallAdapter.Factory callAdapter2 =
         new CallAdapter.Factory() {
-          @Nullable
+          
           @Override
           public CallAdapter<?, ?> get(
               Type returnType, Annotation[] annotations, Retrofit retrofit) {
@@ -376,7 +376,7 @@ public final class RetrofitTest {
     final AtomicBoolean adapterCalled = new AtomicBoolean();
     class MyCallAdapterFactory extends CallAdapter.Factory {
       @Override
-      public @Nullable CallAdapter<?, ?> get(
+      public  CallAdapter<?, ?> get(
           final Type returnType, Annotation[] annotations, Retrofit retrofit) {
         factoryCalled.set(true);
         if (getRawType(returnType) != Call.class) {
@@ -412,7 +412,7 @@ public final class RetrofitTest {
   public void customCallAdapter() {
     class GreetingCallAdapterFactory extends CallAdapter.Factory {
       @Override
-      public @Nullable CallAdapter<Object, String> get(
+      public  CallAdapter<Object, String> get(
           Type returnType, Annotation[] annotations, Retrofit retrofit) {
         if (getRawType(returnType) != String.class) {
           return null;
@@ -446,7 +446,7 @@ public final class RetrofitTest {
     final AtomicReference<Annotation[]> annotationsRef = new AtomicReference<>();
     class MyCallAdapterFactory extends CallAdapter.Factory {
       @Override
-      public @Nullable CallAdapter<?, ?> get(
+      public  CallAdapter<?, ?> get(
           Type returnType, Annotation[] annotations, Retrofit retrofit) {
         annotationsRef.set(annotations);
         return null;
@@ -570,7 +570,7 @@ public final class RetrofitTest {
     final AtomicBoolean factoryCalled = new AtomicBoolean();
     class MyConverterFactory extends Converter.Factory {
       @Override
-      public @Nullable Converter<?, String> stringConverter(
+      public  Converter<?, String> stringConverter(
           Type type, Annotation[] annotations, Retrofit retrofit) {
         factoryCalled.set(true);
         return null;
@@ -592,7 +592,7 @@ public final class RetrofitTest {
     final AtomicBoolean factoryCalled = new AtomicBoolean();
     class MyConverterFactory extends Converter.Factory {
       @Override
-      public @Nullable Converter<?, String> stringConverter(
+      public  Converter<?, String> stringConverter(
           Type type, Annotation[] annotations, Retrofit retrofit) {
         factoryCalled.set(true);
         return null;
@@ -1013,7 +1013,7 @@ public final class RetrofitTest {
   public void builtInConvertersFirstInClone() {
     Converter.Factory factory =
         new Converter.Factory() {
-          @Nullable
+          
           @Override
           public Converter<ResponseBody, ?> responseBodyConverter(
               Type type, Annotation[] annotations, Retrofit retrofit) {
@@ -1037,7 +1037,7 @@ public final class RetrofitTest {
   public void requestConverterFactoryQueried() {
     final Converter<?, RequestBody> expectedAdapter =
         new Converter<Object, RequestBody>() {
-          @Nullable
+          
           @Override
           public RequestBody convert(Object value) {
             throw new AssertionError();
@@ -1132,7 +1132,7 @@ public final class RetrofitTest {
   public void responseConverterFactoryQueried() {
     final Converter<ResponseBody, ?> expectedAdapter =
         new Converter<ResponseBody, Object>() {
-          @Nullable
+          
           @Override
           public Object convert(ResponseBody value) {
             throw new AssertionError();
@@ -1140,7 +1140,7 @@ public final class RetrofitTest {
         };
     Converter.Factory factory =
         new Converter.Factory() {
-          @Nullable
+          
           @Override
           public Converter<ResponseBody, ?> responseBodyConverter(
               Type type, Annotation[] annotations, Retrofit retrofit) {
@@ -1225,7 +1225,7 @@ public final class RetrofitTest {
   public void stringConverterFactoryQueried() {
     final Converter<?, String> expectedConverter =
         new Converter<Object, String>() {
-          @Nullable
+          
           @Override
           public String convert(Object value) {
             throw new AssertionError();
@@ -1233,7 +1233,7 @@ public final class RetrofitTest {
         };
     Converter.Factory factory =
         new Converter.Factory() {
-          @Nullable
+          
           @Override
           public Converter<?, String> stringConverter(
               Type type, Annotation[] annotations, Retrofit retrofit) {
@@ -1277,7 +1277,7 @@ public final class RetrofitTest {
   public void callAdapterFactoryPropagated() {
     CallAdapter.Factory factory =
         new CallAdapter.Factory() {
-          @Nullable
+          
           @Override
           public CallAdapter<?, ?> get(
               Type returnType, Annotation[] annotations, Retrofit retrofit) {
@@ -1308,7 +1308,7 @@ public final class RetrofitTest {
         };
     CallAdapter.Factory factory =
         new CallAdapter.Factory() {
-          @Nullable
+          
           @Override
           public CallAdapter<?, ?> get(
               Type returnType, Annotation[] annotations, Retrofit retrofit) {

@@ -44,7 +44,7 @@ public final class ScalarsConverterFactory extends Converter.Factory {
   private ScalarsConverterFactory() {}
 
   @Override
-  public @Nullable Converter<?, RequestBody> requestBodyConverter(
+  public  Converter<?, RequestBody> requestBodyConverter(
       Type type,
       Annotation[] parameterAnnotations,
       Annotation[] methodAnnotations,
@@ -72,7 +72,7 @@ public final class ScalarsConverterFactory extends Converter.Factory {
   }
 
   @Override
-  public @Nullable Converter<ResponseBody, ?> responseBodyConverter(
+  public  Converter<ResponseBody, ?> responseBodyConverter(
       Type type, Annotation[] annotations, Retrofit retrofit) {
     if (type == String.class) {
       return StringResponseBodyConverter.INSTANCE;

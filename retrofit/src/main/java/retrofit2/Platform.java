@@ -50,7 +50,7 @@ class Platform {
   }
 
   private final boolean hasJava8Types;
-  private final @Nullable Constructor<Lookup> lookupConstructor;
+  @Nullable private final  Constructor<Lookup> lookupConstructor;
 
   Platform(boolean hasJava8Types) {
     this.hasJava8Types = hasJava8Types;
@@ -73,13 +73,13 @@ class Platform {
     this.lookupConstructor = lookupConstructor;
   }
 
-  @Nullable
-  Executor defaultCallbackExecutor() {
+  
+  @Nullable Executor defaultCallbackExecutor() {
     return null;
   }
 
   List<? extends CallAdapter.Factory> defaultCallAdapterFactories(
-      @Nullable Executor callbackExecutor) {
+       @Nullable Executor callbackExecutor) {
     DefaultCallAdapterFactory executorFactory = new DefaultCallAdapterFactory(callbackExecutor);
     return hasJava8Types
         ? asList(CompletableFutureCallAdapterFactory.INSTANCE, executorFactory)
@@ -104,7 +104,7 @@ class Platform {
   }
 
   @IgnoreJRERequirement // Only called on API 26+.
-  @Nullable
+  
   Object invokeDefaultMethod(Method method, Class<?> declaringClass, Object object, Object... args)
       throws Throwable {
     Lookup lookup =
@@ -124,7 +124,7 @@ class Platform {
       return new MainThreadExecutor();
     }
 
-    @Nullable
+    
     @Override
     Object invokeDefaultMethod(
         Method method, Class<?> declaringClass, Object object, Object... args) throws Throwable {

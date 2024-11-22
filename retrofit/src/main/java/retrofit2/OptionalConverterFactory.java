@@ -28,8 +28,8 @@ import org.codehaus.mojo.animal_sniffer.IgnoreJRERequirement;
 final class OptionalConverterFactory extends Converter.Factory {
   static final Converter.Factory INSTANCE = new OptionalConverterFactory();
 
-  @Override
-  public @Nullable Converter<ResponseBody, ?> responseBodyConverter(
+  @Nullable @Override
+  public  Converter<ResponseBody, ?> responseBodyConverter(
       Type type, Annotation[] annotations, Retrofit retrofit) {
     if (getRawType(type) != Optional.class) {
       return null;

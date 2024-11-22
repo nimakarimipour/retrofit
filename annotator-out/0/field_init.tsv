@@ -1,1 +1,4 @@
 kind	class	method	param	index	uri	field
+METHOD	retrofit2.RequestBuilder	addQueryParam(java.lang.String,java.lang.String,boolean)	null	null	/home/nima/Developer/nullness-benchmarks/retrofit/retrofit/src/main/java/retrofit2/RequestBuilder.java	urlBuilder
+METHOD	retrofit2.RequestFactory$Builder	build()	null	null	/home/nima/Developer/nullness-benchmarks/retrofit/retrofit/src/main/java/retrofit2/RequestFactory.java	parameterHandlers
+METHOD	retrofit2.RequestFactory$Builder	parseHttpMethodAndPath(java.lang.String,java.lang.String,boolean)	null	null	/home/nima/Developer/nullness-benchmarks/retrofit/retrofit/src/main/java/retrofit2/RequestFactory.java	httpMethod

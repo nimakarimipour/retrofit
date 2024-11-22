@@ -39,10 +39,10 @@ final class OkHttpCall<T> implements Call<T> {
   private volatile boolean canceled;
 
   @GuardedBy("this")
-  private @Nullable okhttp3.Call rawCall;
+  private  okhttp3.Call rawCall;
 
-  @GuardedBy("this") // Either a RuntimeException, non-fatal Error, or IOException.
-  private @Nullable Throwable creationFailure;
+  @Nullable @GuardedBy("this") // Either a RuntimeException, non-fatal Error, or IOException.
+  private  Throwable creationFailure;
 
   @GuardedBy("this")
   private boolean executed;
@@ -274,15 +274,15 @@ final class OkHttpCall<T> implements Call<T> {
   }
 
   static final class NoContentResponseBody extends ResponseBody {
-    private final @Nullable MediaType contentType;
+    private final  MediaType contentType;
     private final long contentLength;
 
-    NoContentResponseBody(@Nullable MediaType contentType, long contentLength) {
+    NoContentResponseBody( MediaType contentType, long contentLength) {
       this.contentType = contentType;
       this.contentLength = contentLength;
     }
 
-    @Nullable @Override
+     @Override
     public MediaType contentType() {
       return contentType;
     }
@@ -301,7 +301,7 @@ final class OkHttpCall<T> implements Call<T> {
   static final class ExceptionCatchingResponseBody extends ResponseBody {
     private final ResponseBody delegate;
     private final BufferedSource delegateSource;
-    @Nullable IOException thrownException;
+     @Nullable IOException thrownException;
 
     ExceptionCatchingResponseBody(ResponseBody delegate) {
       this.delegate = delegate;

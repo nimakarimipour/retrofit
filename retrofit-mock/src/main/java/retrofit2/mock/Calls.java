@@ -35,7 +35,7 @@ public final class Calls {
     return new DeferredCall<>(callable);
   }
 
-  public static <T> Call<T> response(@Nullable T successValue) {
+  public static <T> Call<T> response( T successValue) {
     return new FakeCall<>(Response.success(successValue), null);
   }
 
@@ -70,7 +70,7 @@ public final class Calls {
     private final AtomicBoolean canceled = new AtomicBoolean();
     private final AtomicBoolean executed = new AtomicBoolean();
 
-    FakeCall(@Nullable Response<T> response, @Nullable Throwable error) {
+    FakeCall( Response<T> response,  Throwable error) {
       if ((response == null) == (error == null)) {
         throw new AssertionError("Only one of response or error can be set.");
       }
@@ -152,7 +152,7 @@ public final class Calls {
 
   static final class DeferredCall<T> implements Call<T> {
     private final Callable<Call<T>> callable;
-    private @Nullable Call<T> delegate;
+    private  Call<T> delegate;
 
     DeferredCall(Callable<Call<T>> callable) {
       this.callable = callable;

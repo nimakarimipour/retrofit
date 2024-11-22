@@ -39,5 +39,5 @@ abstract class ServiceMethod<T> {
     return HttpServiceMethod.parseAnnotations(retrofit, method, requestFactory);
   }
 
-  abstract @Nullable T invoke(Object[] args);
+  @Nullable abstract  T invoke(Object[] args);
 }

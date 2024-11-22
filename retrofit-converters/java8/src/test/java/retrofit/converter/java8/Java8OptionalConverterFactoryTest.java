@@ -82,7 +82,7 @@ public final class Java8OptionalConverterFactoryTest {
             .baseUrl(server.url("/"))
             .addConverterFactory(
                 new Converter.Factory() {
-                  @Nullable
+                  
                   @Override
                   public Converter<ResponseBody, ?> responseBodyConverter(
                       Type type, Annotation[] annotations, Retrofit retrofit) {

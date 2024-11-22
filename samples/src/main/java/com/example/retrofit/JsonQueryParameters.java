@@ -48,7 +48,7 @@ public final class JsonQueryParameters {
     }
 
     @Override
-    public @Nullable Converter<?, String> stringConverter(
+    public  Converter<?, String> stringConverter(
         Type type, Annotation[] annotations, Retrofit retrofit) {
       for (Annotation annotation : annotations) {
         if (annotation instanceof Json) {

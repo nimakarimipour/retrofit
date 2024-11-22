@@ -36,7 +36,7 @@ public final class GuavaOptionalConverterFactory extends Converter.Factory {
   private GuavaOptionalConverterFactory() {}
 
   @Override
-  public @Nullable Converter<ResponseBody, ?> responseBodyConverter(
+  public  Converter<ResponseBody, ?> responseBodyConverter(
       Type type, Annotation[] annotations, Retrofit retrofit) {
     if (getRawType(type) != Optional.class) {
       return null;

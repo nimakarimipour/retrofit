@@ -69,7 +69,7 @@ final class AnnotatedConverters {
     }
 
     @Override
-    public @Nullable Converter<ResponseBody, ?> responseBodyConverter(
+    public  Converter<ResponseBody, ?> responseBodyConverter(
         Type type, Annotation[] annotations, Retrofit retrofit) {
       for (Annotation annotation : annotations) {
         Converter.Factory factory = factories.get(annotation.annotationType());
@@ -81,7 +81,7 @@ final class AnnotatedConverters {
     }
 
     @Override
-    public @Nullable Converter<?, RequestBody> requestBodyConverter(
+    public  Converter<?, RequestBody> requestBodyConverter(
         Type type,
         Annotation[] parameterAnnotations,
         Annotation[] methodAnnotations,

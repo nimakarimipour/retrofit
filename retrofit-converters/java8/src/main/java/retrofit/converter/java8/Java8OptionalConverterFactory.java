@@ -39,7 +39,7 @@ public final class Java8OptionalConverterFactory extends Converter.Factory {
   private Java8OptionalConverterFactory() {}
 
   @Override
-  public @Nullable Converter<ResponseBody, ?> responseBodyConverter(
+  public  Converter<ResponseBody, ?> responseBodyConverter(
       Type type, Annotation[] annotations, Retrofit retrofit) {
     if (getRawType(type) != Optional.class) {
       return null;

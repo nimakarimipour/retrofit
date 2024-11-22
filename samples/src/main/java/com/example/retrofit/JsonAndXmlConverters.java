@@ -60,7 +60,7 @@ public final class JsonAndXmlConverters {
     }
 
     @Override
-    public @Nullable Converter<ResponseBody, ?> responseBodyConverter(
+    public  Converter<ResponseBody, ?> responseBodyConverter(
         Type type, Annotation[] annotations, Retrofit retrofit) {
       for (Annotation annotation : annotations) {
         if (annotation instanceof Json) {
@@ -74,7 +74,7 @@ public final class JsonAndXmlConverters {
     }
 
     @Override
-    public @Nullable Converter<?, RequestBody> requestBodyConverter(
+    public  Converter<?, RequestBody> requestBodyConverter(
         Type type,
         Annotation[] parameterAnnotations,
         Annotation[] methodAnnotations,

@@ -70,7 +70,7 @@ public final class Retrofit {
   final HttpUrl baseUrl;
   final List<Converter.Factory> converterFactories;
   final List<CallAdapter.Factory> callAdapterFactories;
-  final @Nullable Executor callbackExecutor;
+  @Nullable final  Executor callbackExecutor;
   final boolean validateEagerly;
 
   Retrofit(
@@ -78,7 +78,7 @@ public final class Retrofit {
       HttpUrl baseUrl,
       List<Converter.Factory> converterFactories,
       List<CallAdapter.Factory> callAdapterFactories,
-      @Nullable Executor callbackExecutor,
+       @Nullable Executor callbackExecutor,
       boolean validateEagerly) {
     this.callFactory = callFactory;
     this.baseUrl = baseUrl;
@@ -147,8 +147,8 @@ public final class Retrofit {
               private final Platform platform = Platform.get();
               private final Object[] emptyArgs = new Object[0];
 
-              @Override
-              public @Nullable Object invoke(Object proxy, Method method, @Nullable Object[] args)
+              @Nullable @Override
+              public  Object invoke(Object proxy, Method method,  Object[] args)
                   throws Throwable {
                 // If the method is a method from Object then defer to normal invocation.
                 if (method.getDeclaringClass() == Object.class) {
@@ -244,7 +244,7 @@ public final class Retrofit {
    * @throws IllegalArgumentException if no call adapter available for {@code type}.
    */
   public CallAdapter<?, ?> nextCallAdapter(
-      @Nullable CallAdapter.Factory skipPast, Type returnType, Annotation[] annotations) {
+       @Nullable CallAdapter.Factory skipPast, Type returnType, Annotation[] annotations) {
     Objects.requireNonNull(returnType, "returnType == null");
     Objects.requireNonNull(annotations, "annotations == null");
 
@@ -300,7 +300,7 @@ public final class Retrofit {
    * @throws IllegalArgumentException if no converter available for {@code type}.
    */
   public <T> Converter<T, RequestBody> nextRequestBodyConverter(
-      @Nullable Converter.Factory skipPast,
+       @Nullable Converter.Factory skipPast,
       Type type,
       Annotation[] parameterAnnotations,
       Annotation[] methodAnnotations) {
@@ -352,7 +352,7 @@ public final class Retrofit {
    * @throws IllegalArgumentException if no converter available for {@code type}.
    */
   public <T> Converter<ResponseBody, T> nextResponseBodyConverter(
-      @Nullable Converter.Factory skipPast, Type type, Annotation[] annotations) {
+       @Nullable Converter.Factory skipPast, Type type, Annotation[] annotations) {
     Objects.requireNonNull(type, "type == null");
     Objects.requireNonNull(annotations, "annotations == null");
 
@@ -410,7 +410,7 @@ public final class Retrofit {
    * The executor used for {@link Callback} methods on a {@link Call}. This may be {@code null}, in
    * which case callbacks should be made synchronously on the background thread.
    */
-  public @Nullable Executor callbackExecutor() {
+  @Nullable public  Executor callbackExecutor() {
     return callbackExecutor;
   }
 
@@ -426,11 +426,11 @@ public final class Retrofit {
    */
   public static final class Builder {
     private final Platform platform;
-    private @Nullable okhttp3.Call.Factory callFactory;
-    private @Nullable HttpUrl baseUrl;
+    @Nullable private  okhttp3.Call.Factory callFactory;
+    @Nullable private  HttpUrl baseUrl;
     private final List<Converter.Factory> converterFactories = new ArrayList<>();
     private final List<CallAdapter.Factory> callAdapterFactories = new ArrayList<>();
-    private @Nullable Executor callbackExecutor;
+    @Nullable private  Executor callbackExecutor;
     private boolean validateEagerly;
 
     Builder(Platform platform) {

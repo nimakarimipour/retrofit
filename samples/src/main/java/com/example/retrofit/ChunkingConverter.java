@@ -49,7 +49,7 @@ public final class ChunkingConverter {
    */
   static class ChunkingConverterFactory extends Converter.Factory {
     @Override
-    public @Nullable Converter<Object, RequestBody> requestBodyConverter(
+    public  Converter<Object, RequestBody> requestBodyConverter(
         Type type,
         Annotation[] parameterAnnotations,
         Annotation[] methodAnnotations,

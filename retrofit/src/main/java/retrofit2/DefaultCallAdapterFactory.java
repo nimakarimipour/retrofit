@@ -26,14 +26,14 @@ import okhttp3.Request;
 import okio.Timeout;
 
 final class DefaultCallAdapterFactory extends CallAdapter.Factory {
-  private final @Nullable Executor callbackExecutor;
+  @Nullable private final  Executor callbackExecutor;
 
-  DefaultCallAdapterFactory(@Nullable Executor callbackExecutor) {
+  DefaultCallAdapterFactory( @Nullable Executor callbackExecutor) {
     this.callbackExecutor = callbackExecutor;
   }
 
-  @Override
-  public @Nullable CallAdapter<?, ?> get(
+  @Nullable @Override
+  public  CallAdapter<?, ?> get(
       Type returnType, Annotation[] annotations, Retrofit retrofit) {
     if (getRawType(returnType) != Call.class) {
       return null;

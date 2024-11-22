@@ -59,7 +59,7 @@ public final class GuavaCallAdapterFactory extends CallAdapter.Factory {
   private GuavaCallAdapterFactory() {}
 
   @Override
-  public @Nullable CallAdapter<?, ?> get(
+  public  CallAdapter<?, ?> get(
       Type returnType, Annotation[] annotations, Retrofit retrofit) {
     if (getRawType(returnType) != ListenableFuture.class) {
       return null;

@@ -27,9 +27,9 @@ import retrofit2.Converter;
 final class ProtoResponseBodyConverter<T extends MessageLite>
     implements Converter<ResponseBody, T> {
   private final Parser<T> parser;
-  private final @Nullable ExtensionRegistryLite registry;
+  private final  ExtensionRegistryLite registry;
 
-  ProtoResponseBodyConverter(Parser<T> parser, @Nullable ExtensionRegistryLite registry) {
+  ProtoResponseBodyConverter(Parser<T> parser,  ExtensionRegistryLite registry) {
     this.parser = parser;
     this.registry = registry;
   }

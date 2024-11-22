@@ -51,7 +51,7 @@ public final class BehaviorDelegate<T> {
     this.service = service;
   }
 
-  public T returningResponse(@Nullable Object response) {
+  public T returningResponse( Object response) {
     return returning(Calls.response(response));
   }
 
@@ -144,7 +144,7 @@ public final class BehaviorDelegate<T> {
     }
 
     @Override
-    public @Nullable Type getOwnerType() {
+    public  Type getOwnerType() {
       return null;
     }
   }

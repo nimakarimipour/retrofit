@@ -69,14 +69,14 @@ final class RequestFactory {
 
   private final Method method;
   private final HttpUrl baseUrl;
-  @Nullable final String httpMethod;
-  private final @Nullable String relativeUrl;
-  private final @Nullable Headers headers;
-  private final @Nullable MediaType contentType;
+   final String httpMethod;
+  @Nullable private final  String relativeUrl;
+  @Nullable private final  Headers headers;
+  @Nullable private final  MediaType contentType;
   private final boolean hasBody;
   private final boolean isFormEncoded;
   private final boolean isMultipart;
-  @Nullable private final ParameterHandler<?>[] parameterHandlers;
+   private final ParameterHandler<?>[] parameterHandlers;
   final boolean isKotlinSuspendFunction;
 
   RequestFactory(Builder builder) {
@@ -157,15 +157,15 @@ final class RequestFactory {
     boolean gotQueryName;
     boolean gotQueryMap;
     boolean gotUrl;
-    @Nullable String httpMethod;
+     String httpMethod;
     boolean hasBody;
     boolean isFormEncoded;
     boolean isMultipart;
-    @Nullable String relativeUrl;
-    @Nullable Headers headers;
-    @Nullable MediaType contentType;
-    @Nullable Set<String> relativeUrlParamNames;
-    @Nullable ParameterHandler<?>[] parameterHandlers;
+     @Nullable String relativeUrl;
+     @Nullable Headers headers;
+     @Nullable MediaType contentType;
+     Set<String> relativeUrlParamNames;
+     ParameterHandler<?>[] parameterHandlers;
     boolean isKotlinSuspendFunction;
 
     Builder(Retrofit retrofit, Method method) {
@@ -316,8 +316,8 @@ final class RequestFactory {
       return builder.build();
     }
 
-    private @Nullable ParameterHandler<?> parseParameter(
-        int p, Type parameterType, @Nullable Annotation[] annotations, boolean allowContinuation) {
+    @Nullable private  ParameterHandler<?> parseParameter(
+        int p, Type parameterType,  Annotation[] annotations, boolean allowContinuation) {
       ParameterHandler<?> result = null;
       if (annotations != null) {
         for (Annotation annotation : annotations) {
@@ -353,8 +353,8 @@ final class RequestFactory {
       return result;
     }
 
-    @Nullable
-    private ParameterHandler<?> parseParameterAnnotation(
+    
+    @Nullable private ParameterHandler<?> parseParameterAnnotation(
         int p, Type type, Annotation[] annotations, Annotation annotation) {
       if (annotation instanceof Url) {
         validateResolvableType(p, type);

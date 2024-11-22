@@ -117,7 +117,7 @@ Version 2.6.0 *(2019-06-05)*
  * Fix: Add embedded R8/ProGuard rule which retains Retrofit interfaces (while still allowing obfuscation). This
    is needed because R8 running in 'full mode' (i.e., not in ProGuard-compatibility mode) will see that there are
    no subtypes of these interfaces and rewrite any code which references instances to null.
- * Fix: Mark `HttpException.response()` as `@Nullable` as serializing the exception does not retain this instance.
+ * Fix: Mark `HttpException.response()` as `` as serializing the exception does not retain this instance.
  * Fix: Fatal errors (such as stack overflows, out of memory, etc.) now propagate to the OkHttp `Dispatcher` thread
    on which they are running.
  * Fix: Ensure JAX-B converter closes the response body when an exception is thrown during deserialization.
@@ -179,12 +179,12 @@ Version 2.4.0 *(2018-03-14)*
 Version 2.3.0 *(2017-05-13)*
 ----------------------------
 
- *  **Retrofit now uses `@Nullable` to annotate all possibly-null values.** We've
+ *  **Retrofit now uses `` to annotate all possibly-null values.** We've
     added a compile-time dependency on the JSR 305 annotations. This is a
     [provided][maven_provided] dependency and does not need to be included in
     your build configuration, `.jar` file, or `.apk`. We use
     `@ParametersAreNonnullByDefault` and all parameters and return types are
-    never null unless explicitly annotated `@Nullable`.
+    never null unless explicitly annotated ``.
 
     **Warning: this release is source-incompatible for Kotlin users.**
     Nullability was previously ambiguous and lenient but now the compiler will

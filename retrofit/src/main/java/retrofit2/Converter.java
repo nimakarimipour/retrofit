@@ -39,7 +39,7 @@ import retrofit2.http.QueryMap;
  * into the {@link Retrofit} instance.
  */
 public interface Converter<F, T> {
-  @Nullable
+  
   T convert(F value) throws IOException;
 
   /** Creates {@link Converter} instances based on a type and target usage. */
@@ -50,7 +50,7 @@ public interface Converter<F, T> {
      * response types such as {@code SimpleResponse} from a {@code Call<SimpleResponse>}
      * declaration.
      */
-    public @Nullable Converter<ResponseBody, ?> responseBodyConverter(
+    @Nullable public  Converter<ResponseBody, ?> responseBodyConverter(
         Type type, Annotation[] annotations, Retrofit retrofit) {
       return null;
     }
@@ -60,7 +60,7 @@ public interface Converter<F, T> {
      * {@code type} cannot be handled by this factory. This is used to create converters for types
      * specified by {@link Body @Body}, {@link Part @Part}, and {@link PartMap @PartMap} values.
      */
-    public @Nullable Converter<?, RequestBody> requestBodyConverter(
+    @Nullable public  Converter<?, RequestBody> requestBodyConverter(
         Type type,
         Annotation[] parameterAnnotations,
         Annotation[] methodAnnotations,
@@ -75,7 +75,7 @@ public interface Converter<F, T> {
      * {@link HeaderMap @HeaderMap}, {@link Path @Path}, {@link Query @Query}, and {@link
      * QueryMap @QueryMap} values.
      */
-    public @Nullable Converter<?, String> stringConverter(
+    @Nullable public  Converter<?, String> stringConverter(
         Type type, Annotation[] annotations, Retrofit retrofit) {
       return null;
     }

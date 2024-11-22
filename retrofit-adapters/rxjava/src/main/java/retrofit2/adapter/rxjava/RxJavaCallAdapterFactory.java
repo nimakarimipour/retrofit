@@ -84,16 +84,16 @@ public final class RxJavaCallAdapterFactory extends CallAdapter.Factory {
     return new RxJavaCallAdapterFactory(scheduler, false);
   }
 
-  private final @Nullable Scheduler scheduler;
+  private final  Scheduler scheduler;
   private final boolean isAsync;
 
-  private RxJavaCallAdapterFactory(@Nullable Scheduler scheduler, boolean isAsync) {
+  private RxJavaCallAdapterFactory( Scheduler scheduler, boolean isAsync) {
     this.scheduler = scheduler;
     this.isAsync = isAsync;
   }
 
   @Override
-  public @Nullable CallAdapter<?, ?> get(
+  public  CallAdapter<?, ?> get(
       Type returnType, Annotation[] annotations, Retrofit retrofit) {
     Class<?> rawType = getRawType(returnType);
     boolean isSingle = rawType == Single.class;

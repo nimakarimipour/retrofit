@@ -31,7 +31,7 @@ final class PhoneNumber {
     this("", Type.OTHER);
   }
 
-  PhoneNumber(String number, @Nullable Type type) {
+  PhoneNumber(String number,  Type type) {
     this.number = number;
     this.type = type;
   }

@@ -39,12 +39,12 @@ final class Utils {
     // No instances.
   }
 
-  static RuntimeException methodError(Method method, String message, @Nullable Object... args) {
+  static RuntimeException methodError(Method method, String message,  @Nullable Object... args) {
     return methodError(method, null, message, args);
   }
 
   static RuntimeException methodError(
-      Method method, @Nullable Throwable cause, String message, @Nullable Object... args) {
+      Method method,  @Nullable Throwable cause, String message,  @Nullable Object... args) {
     message = String.format(message, args);
     return new IllegalArgumentException(
         message
@@ -60,7 +60,7 @@ final class Utils {
     return methodError(method, cause, message + " (parameter #" + (p + 1) + ")", args);
   }
 
-  static RuntimeException parameterError(Method method, int p, String message, @Nullable Object... args) {
+  static RuntimeException parameterError(Method method, int p, String message,  @Nullable Object... args) {
     return methodError(method, message + " (parameter #" + (p + 1) + ")", args);
   }
 
@@ -297,7 +297,7 @@ final class Utils {
    * Returns the declaring class of {@code typeVariable}, or {@code null} if it was not declared by
    * a class.
    */
-  private static @Nullable Class<?> declaringClassOf(TypeVariable<?> typeVariable) {
+  @Nullable private static  Class<?> declaringClassOf(TypeVariable<?> typeVariable) {
     GenericDeclaration genericDeclaration = typeVariable.getGenericDeclaration();
     return genericDeclaration instanceof Class ? (Class<?>) genericDeclaration : null;
   }
@@ -345,7 +345,7 @@ final class Utils {
     return paramType;
   }
 
-  static boolean hasUnresolvableType(@Nullable Type type) {
+  static boolean hasUnresolvableType( Type type) {
     if (type instanceof Class<?>) {
       return false;
     }
@@ -377,11 +377,11 @@ final class Utils {
   }
 
   static final class ParameterizedTypeImpl implements ParameterizedType {
-    private final @Nullable Type ownerType;
+    @Nullable private final  Type ownerType;
     private final Type rawType;
     private final Type[] typeArguments;
 
-    ParameterizedTypeImpl(@Nullable Type ownerType, Type rawType, Type... typeArguments) {
+    ParameterizedTypeImpl( @Nullable Type ownerType, Type rawType, Type... typeArguments) {
       // Require an owner type if the raw type needs it.
       if (rawType instanceof Class<?>
           && (ownerType == null) != (((Class<?>) rawType).getEnclosingClass() == null)) {
@@ -408,8 +408,8 @@ final class Utils {
       return rawType;
     }
 
-    @Override
-    public @Nullable Type getOwnerType() {
+    @Nullable @Override
+    public  Type getOwnerType() {
       return ownerType;
     }
 
@@ -473,7 +473,7 @@ final class Utils {
    */
   private static final class WildcardTypeImpl implements WildcardType {
     private final Type upperBound;
-    private final @Nullable Type lowerBound;
+    @Nullable private final  Type lowerBound;
 
     WildcardTypeImpl(Type[] upperBounds, Type[] lowerBounds) {
       if (lowerBounds.length > 1) throw new IllegalArgumentException();

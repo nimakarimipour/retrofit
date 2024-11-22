@@ -26,7 +26,7 @@ public final class ObjectInstanceConverterFactory extends Converter.Factory {
   public static final Object VALUE = new Object();
 
   @Override
-  public @Nullable Converter<ResponseBody, Object> responseBodyConverter(
+  public  Converter<ResponseBody, Object> responseBodyConverter(
       Type type, Annotation[] annotations, Retrofit retrofit) {
     if (type != Object.class) {
       return null;

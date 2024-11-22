@@ -41,18 +41,18 @@ public final class ProtoConverterFactory extends Converter.Factory {
   }
 
   /** Create an instance which uses {@code registry} when deserializing. */
-  public static ProtoConverterFactory createWithRegistry(@Nullable ExtensionRegistryLite registry) {
+  public static ProtoConverterFactory createWithRegistry( ExtensionRegistryLite registry) {
     return new ProtoConverterFactory(registry);
   }
 
-  private final @Nullable ExtensionRegistryLite registry;
+  private final  ExtensionRegistryLite registry;
 
-  private ProtoConverterFactory(@Nullable ExtensionRegistryLite registry) {
+  private ProtoConverterFactory( ExtensionRegistryLite registry) {
     this.registry = registry;
   }
 
   @Override
-  public @Nullable Converter<ResponseBody, ?> responseBodyConverter(
+  public  Converter<ResponseBody, ?> responseBodyConverter(
       Type type, Annotation[] annotations, Retrofit retrofit) {
     if (!(type instanceof Class<?>)) {
       return null;
@@ -87,7 +87,7 @@ public final class ProtoConverterFactory extends Converter.Factory {
   }
 
   @Override
-  public @Nullable Converter<?, RequestBody> requestBodyConverter(
+  public  Converter<?, RequestBody> requestBodyConverter(
       Type type,
       Annotation[] parameterAnnotations,
       Annotation[] methodAnnotations,

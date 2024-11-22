@@ -26,7 +26,7 @@ import rx.Scheduler;
 
 final class RxJavaCallAdapter<R> implements CallAdapter<R, Object> {
   private final Type responseType;
-  private final @Nullable Scheduler scheduler;
+  private final  Scheduler scheduler;
   private final boolean isAsync;
   private final boolean isResult;
   private final boolean isBody;
@@ -35,7 +35,7 @@ final class RxJavaCallAdapter<R> implements CallAdapter<R, Object> {
 
   RxJavaCallAdapter(
       Type responseType,
-      @Nullable Scheduler scheduler,
+       Scheduler scheduler,
       boolean isAsync,
       boolean isResult,
       boolean isBody,

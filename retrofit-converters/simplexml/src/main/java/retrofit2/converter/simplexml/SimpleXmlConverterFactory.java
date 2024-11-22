@@ -80,7 +80,7 @@ public final class SimpleXmlConverterFactory extends Converter.Factory {
   }
 
   @Override
-  public @Nullable Converter<?, RequestBody> requestBodyConverter(
+  public  Converter<?, RequestBody> requestBodyConverter(
       Type type,
       Annotation[] parameterAnnotations,
       Annotation[] methodAnnotations,

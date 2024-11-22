@@ -63,7 +63,7 @@ public final class ErrorHandlingAdapter {
 
   public static class ErrorHandlingCallAdapterFactory extends CallAdapter.Factory {
     @Override
-    public @Nullable CallAdapter<?, ?> get(
+    public  CallAdapter<?, ?> get(
         Type returnType, Annotation[] annotations, Retrofit retrofit) {
       if (getRawType(returnType) != MyCall.class) {
         return null;

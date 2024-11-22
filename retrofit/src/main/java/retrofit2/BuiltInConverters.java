@@ -28,8 +28,8 @@ final class BuiltInConverters extends Converter.Factory {
   /** Not volatile because we don't mind multiple threads discovering this. */
   private boolean checkForKotlinUnit = true;
 
-  @Override
-  public @Nullable Converter<ResponseBody, ?> responseBodyConverter(
+  @Nullable @Override
+  public  Converter<ResponseBody, ?> responseBodyConverter(
       Type type, Annotation[] annotations, Retrofit retrofit) {
     if (type == ResponseBody.class) {
       return Utils.isAnnotationPresent(annotations, Streaming.class)
@@ -51,8 +51,8 @@ final class BuiltInConverters extends Converter.Factory {
     return null;
   }
 
-  @Override
-  public @Nullable Converter<?, RequestBody> requestBodyConverter(
+  @Nullable @Override
+  public  Converter<?, RequestBody> requestBodyConverter(
       Type type,
       Annotation[] parameterAnnotations,
       Annotation[] methodAnnotations,

@@ -25,7 +25,7 @@ public final class NonMatchingCallAdapterFactory extends CallAdapter.Factory {
   public boolean called;
 
   @Override
-  public @Nullable CallAdapter<?, ?> get(
+  public  CallAdapter<?, ?> get(
       Type returnType, Annotation[] annotations, Retrofit retrofit) {
     called = true;
     return null;

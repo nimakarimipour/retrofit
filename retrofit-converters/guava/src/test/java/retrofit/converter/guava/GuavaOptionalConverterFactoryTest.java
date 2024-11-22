@@ -82,7 +82,7 @@ public final class GuavaOptionalConverterFactoryTest {
             .baseUrl(server.url("/"))
             .addConverterFactory(
                 new Converter.Factory() {
-                  @Nullable
+                  
                   @Override
                   public Converter<ResponseBody, Object> responseBodyConverter(
                       Type type, Annotation[] annotations, Retrofit retrofit) {

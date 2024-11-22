@@ -38,7 +38,7 @@ public final class WireConverterFactory extends Converter.Factory {
   private WireConverterFactory() {}
 
   @Override
-  public @Nullable Converter<ResponseBody, ?> responseBodyConverter(
+  public  Converter<ResponseBody, ?> responseBodyConverter(
       Type type, Annotation[] annotations, Retrofit retrofit) {
     if (!(type instanceof Class<?>)) {
       return null;
@@ -53,7 +53,7 @@ public final class WireConverterFactory extends Converter.Factory {
   }
 
   @Override
-  public @Nullable Converter<?, RequestBody> requestBodyConverter(
+  public  Converter<?, RequestBody> requestBodyConverter(
       Type type,
       Annotation[] parameterAnnotations,
       Annotation[] methodAnnotations,

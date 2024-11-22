@@ -26,8 +26,8 @@ import org.codehaus.mojo.animal_sniffer.IgnoreJRERequirement;
 final class CompletableFutureCallAdapterFactory extends CallAdapter.Factory {
   static final CallAdapter.Factory INSTANCE = new CompletableFutureCallAdapterFactory();
 
-  @Override
-  public @Nullable CallAdapter<?, ?> get(
+  @Nullable @Override
+  public  CallAdapter<?, ?> get(
       Type returnType, Annotation[] annotations, Retrofit retrofit) {
     if (getRawType(returnType) != CompletableFuture.class) {
       return null;

@@ -52,7 +52,7 @@ public final class RxJavaObserveOnMainThread {
     }
 
     @Override
-    public @Nullable CallAdapter<?, ?> get(
+    public  CallAdapter<?, ?> get(
         Type returnType, Annotation[] annotations, Retrofit retrofit) {
       if (getRawType(returnType) != Observable.class) {
         return null; // Ignore non-Observable types.

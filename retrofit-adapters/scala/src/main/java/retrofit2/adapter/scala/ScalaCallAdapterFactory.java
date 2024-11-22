@@ -56,7 +56,7 @@ public final class ScalaCallAdapterFactory extends CallAdapter.Factory {
   private ScalaCallAdapterFactory() {}
 
   @Override
-  public @Nullable CallAdapter<?, ?> get(
+  public  CallAdapter<?, ?> get(
       Type returnType, Annotation[] annotations, Retrofit retrofit) {
     if (getRawType(returnType) != Future.class) {
       return null;

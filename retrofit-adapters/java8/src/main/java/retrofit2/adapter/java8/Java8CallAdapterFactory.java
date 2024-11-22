@@ -58,7 +58,7 @@ public final class Java8CallAdapterFactory extends CallAdapter.Factory {
   private Java8CallAdapterFactory() {}
 
   @Override
-  public @Nullable CallAdapter<?, ?> get(
+  public  CallAdapter<?, ?> get(
       Type returnType, Annotation[] annotations, Retrofit retrofit) {
     if (getRawType(returnType) != CompletableFuture.class) {
       return null;
