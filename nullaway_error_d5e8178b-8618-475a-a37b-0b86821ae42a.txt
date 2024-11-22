@@ -1,4 +1,0 @@
-/home/nima/Developer/nullness-benchmarks/retrofit/retrofit/src/main/java/retrofit2/RequestBuilder.java:67: error: [NullAway] initializer method does not guarantee @NonNull fields urlBuilder (line 56), multipartBuilder (line 63), formBuilder (line 64) are initialized along all control-flow paths (remember to check for exceptions or early returns).
-  RequestBuilder(
-  ^
-    (see http://t.uber.com/nullaway )

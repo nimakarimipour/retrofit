@@ -168,6 +168,7 @@ final class RequestFactory {
      ParameterHandler<?>[] parameterHandlers;
     boolean isKotlinSuspendFunction;
 
+    @SuppressWarnings("NullAway")
     Builder(Retrofit retrofit, Method method) {
       this.retrofit = retrofit;
       this.method = method;
