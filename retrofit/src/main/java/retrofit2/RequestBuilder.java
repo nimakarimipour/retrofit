@@ -64,6 +64,7 @@ final class RequestBuilder {
   private  FormBody.Builder formBuilder;
   @Nullable private  RequestBody body;
 
+  @SuppressWarnings("NullAway")
   RequestBuilder(
        String method,
       HttpUrl baseUrl,
