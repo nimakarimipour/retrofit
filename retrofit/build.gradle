@@ -1,11 +1,14 @@
 plugins {
   id 'java'
-  id("net.ltgt.errorprone") version "2.0.1"
+  id("net.ltgt.errorprone") version "3.0.1"
 }
 
 apply plugin: 'java-library'
 apply plugin: 'org.jetbrains.kotlin.jvm'
-apply plugin: 'com.vanniktech.maven.publish'
+
+
+
+
 
 
 repositories {
@@ -15,30 +18,20 @@ repositories {
 
 
 dependencies {
-  api deps.okhttp
-
+  compileOnly deps.okhttp
   compileOnly deps.android
   compileOnly deps.kotlinStdLib
   compileOnly deps.kotlinCoroutines
-
   compileOnly deps.animalSnifferAnnotations
   compileOnly deps.findBugsAnnotations
 
-  testImplementation project(':retrofit:test-helpers')
-  testImplementation deps.junit
-  testImplementation deps.assertj
-  testImplementation deps.guava
-  testImplementation deps.mockwebserver
-  testImplementation deps.kotlinStdLib
-  testImplementation deps.kotlinCoroutines
-
-  annotationProcessor "com.uber.nullaway:nullaway:0.10.15"
-  annotationProcessor "edu.ucr.cs.riple.annotator:annotator-scanner:1.3.15"
-
+  annotationProcessor "com.uber.nullaway:nullaway:0.12.4-SNAPSHOT"
+  annotationProcessor "edu.ucr.cs.riple.annotator:annotator-scanner:1.3.16-SNAPSHOT"
+  implementation "edu.ucr.cs.riple.annotator:annotation-util:1.3.16-SNAPSHOT"
   compileOnly "com.google.code.findbugs:jsr305:3.0.2"
-  errorprone "com.google.errorprone:error_prone_core:2.3.2"
+  errorprone "com.google.errorprone:error_prone_core:2.35.1"
   errorproneJavac "com.google.errorprone:javac:9+181-r4173-1"
-  compileOnly "com.uber.nullaway:nullaway-annotations:0.10.20"
+  compileOnly "com.uber.nullaway:nullaway-annotations:0.12.4-SNAPSHOT"
 }
 
 
