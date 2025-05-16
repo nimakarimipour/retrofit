@@ -60,7 +60,8 @@ final class Utils {
     return methodError(method, cause, message + " (parameter #" + (p + 1) + ")", args);
   }
 
-  static RuntimeException parameterError(Method method, int p, String message, @Nullable Object... args) {
+  static RuntimeException parameterError(
+      Method method, int p, String message, @Nullable Object... args) {
     return methodError(method, message + " (parameter #" + (p + 1) + ")", args);
   }
 

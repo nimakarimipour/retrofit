@@ -1,4 +1,3 @@
 package retrofit2;
 
-public @interface Initializer {
-}
+public @interface Initializer {}
