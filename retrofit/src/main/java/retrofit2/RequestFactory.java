@@ -824,12 +824,6 @@ final class RequestFactory {
             PARAM_URL_REGEX.pattern(),
             name);
       }
-
-      // Initializing relativeUrlParamNames if it's null
-      if (relativeUrlParamNames == null) {
-        relativeUrlParamNames = new HashSet<>();
-      }
-
       // Verify URL replacement name is actually present in the URL path.
       if (!relativeUrlParamNames.contains(name)) {
         throw parameterError(method, p, "URL \"%s\" does not contain \"{%s}\".", relativeUrl, name);
