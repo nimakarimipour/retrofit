@@ -94,11 +94,7 @@ final class RequestFactory {
   }
 
   okhttp3.Request create(Object[] args) throws IOException {
-    if (parameterHandlers == null) {
-      throw new NullPointerException("parameterHandlers is null");
-    }
-
-    @SuppressWarnings("unchecked")
+    @SuppressWarnings("unchecked") // It is an error to invoke a method with the wrong arg types.
     ParameterHandler<Object>[] handlers = (ParameterHandler<Object>[]) parameterHandlers;
 
     int argumentCount = args.length;
@@ -123,6 +119,7 @@ final class RequestFactory {
             isMultipart);
 
     if (isKotlinSuspendFunction) {
+      // The Continuation is the last parameter and the handlers array contains null at that index.
       argumentCount--;
     }
 
