@@ -1,0 +1,100 @@
+====================
+Type='DEREFERENCE_NULLABLE', message='dereferenced expression multipartBuilder is @Nullable'
+/home/nima/Developer/nullness-benchmarks/retrofit/retrofit/src/main/java/retrofit2/RequestBuilder.java:215
+    multipartBuilder.addPart(headers, body);
+Log:
+---NullAway.lambda$resolveRemainingErrors$17---
+==============================
+---NullAway.lambda$resolveRemainingErrors$17---
+TOP LEVEL CALL TO FIX ERROR: Type='DEREFERENCE_NULLABLE', message='dereferenced expression multipartBuilder is @Nullable'
+/home/nima/Developer/nullness-benchmarks/retrofit/retrofit/src/main/java/retrofit2/RequestBuilder.java:215
+    multipartBuilder.addPart(headers, body);
+---ChatGPT.ask---
+Asking ChatGPT:
+I want to resolve a warning reported by NullAway.
+The error is of the type of "DEREFERENCE_NULLABLE" and the full error message is: "dereferenced expression multipartBuilder is @Nullable".
+The line with the error is: "    multipartBuilder.addPart(headers, body);".
+
+The error is within "the method: addPart(okhttp3.Headers,okhttp3.RequestBody)" and the code surrounding the error is:
+```java
+    if (encoded) {
+      //noinspection ConstantConditions Checked to be non-null by above 'if' block.
+      urlBuilder.addEncodedQueryParameter(name, value);
+    } else {
+      //noinspection ConstantConditions Checked to be non-null by above 'if' block.
+      urlBuilder.addQueryParameter(name, value);
+    }
+  }
+
+  @SuppressWarnings("ConstantConditions") // Only called when isFormEncoded was true.
+  void addFormField(String name, String value, boolean encoded) {
+    if (encoded) {
+      formBuilder.addEncoded(name, value);
+    } else {
+      formBuilder.add(name, value);
+    }
+  }
+
+  @SuppressWarnings("ConstantConditions") // Only called when isMultipart was true.
+  void addPart(Headers headers, @Nullable RequestBody body) {
+    multipartBuilder.addPart(headers, body);
+  }
+
+  @SuppressWarnings("ConstantConditions") // Only called when isMultipart was true.
+  void addPart(MultipartBody.Part part) {
+    multipartBuilder.addPart(part);
+  }
+
+  void setBody(@Nullable RequestBody body) {
+    this.body = body;
+  }
+
+  <T> void addTag(Class<T> cls, @Nullable T value) {
+    requestBuilder.tag(cls, value);
+  }
+
+  Request.Builder get() {
+    HttpUrl url;
+    HttpUrl.Builder urlBuilder = this.urlBuilder;
+    if (urlBuilder != null) {
+```
+
+Give me the fixed code snippet (ONLY THE METHOD REWRITE OF "addPart(okhttp3.Headers,okhttp3.RequestBody)") in XML format in <response> tag like the example below. I will apply the fix to my codebase.
+Do not import any additional libraries or classes or java comments.
+If you can provide the fixed code snippet, provide it in the following format and place the code snippet in the <code> tag within ```java block.
+<response>
+  <success>true</success>
+  <code><![CDATA[
+  ```java
+  Your fixed code snippet here
+  ```
+    ]]>
+  </code>
+</response>
+
+---ChatGPT.sendRequestToOpenAI---
+Retrieving response from cache
+---Response.<init>---
+Creating Response:
+```xml
+<response>
+  <success>true</success>
+  <code><![CDATA[
+  ```java
+  void addPart(Headers headers, RequestBody body) {
+    if (multipartBuilder != null) {
+      multipartBuilder.addPart(headers, body);
+    }
+  }
+  ```
+  ]]>
+  </code>
+</response>
+```
+---Response.<init>---
+Response created:
+void addPart(Headers headers, RequestBody body) {
+    if (multipartBuilder != null) {
+      multipartBuilder.addPart(headers, body);
+    }
+  }
