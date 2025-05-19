@@ -141,7 +141,7 @@ final class OkHttpCall<T> implements Call<T> {
     }
 
     if (canceled) {
-      call.cancel();
+      NullabilityUtil.castToNonnull(call, "initialized before 'canceled' check").cancel();
     }
 
     call.enqueue(
