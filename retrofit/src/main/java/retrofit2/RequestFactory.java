@@ -98,7 +98,7 @@ final class RequestFactory {
     ParameterHandler<Object>[] handlers = (ParameterHandler<Object>[]) parameterHandlers;
 
     int argumentCount = args.length;
-    if (argumentCount != NullabilityUtil.castToNonnull(handlers, "directly initialized").length) {
+    if (argumentCount != handlers.length) {
       throw new IllegalArgumentException(
           "Argument count ("
               + argumentCount
