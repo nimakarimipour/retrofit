@@ -181,8 +181,9 @@ final class RequestBuilder {
     }
   }
 
-  void addQueryParam(String name, String value, boolean encoded) {
+  void addQueryParam(@Nullable String name, @Nullable String value, boolean encoded) {
     if (relativeUrl != null) {
+      // Do a one-time combination of the built relative URL and the base URL.
       urlBuilder = baseUrl.newBuilder(relativeUrl);
       if (urlBuilder == null) {
         throw new IllegalArgumentException(
@@ -192,9 +193,10 @@ final class RequestBuilder {
     }
 
     if (encoded) {
-      NullabilityUtil.castToNonnull(urlBuilder, "urlBuilder initialized")
-          .addEncodedQueryParameter(name, value);
+      //noinspection ConstantConditions Checked to be non-null by above 'if' block.
+      urlBuilder.addEncodedQueryParameter(name, value);
     } else {
+      //noinspection ConstantConditions Checked to be non-null by above 'if' block.
       urlBuilder.addQueryParameter(name, value);
     }
   }
