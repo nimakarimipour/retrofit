@@ -60,7 +60,7 @@ final class RequestBuilder {
   private @Nullable MediaType contentType;
 
   private final boolean hasBody;
-  private @Nullable MultipartBody.Builder multipartBuilder;
+  @Nullable private MultipartBody.Builder multipartBuilder;
   private @Nullable FormBody.Builder formBuilder;
   private @Nullable RequestBody body;
 
@@ -211,13 +211,21 @@ final class RequestBuilder {
   }
 
   @SuppressWarnings("ConstantConditions") // Only called when isMultipart was true.
-  void addPart(Headers headers, @Nullable RequestBody body) {
+  void addPart(Headers headers, RequestBody body) {
+    if (multipartBuilder == null) {
+      multipartBuilder = new MultipartBody.Builder();
+      multipartBuilder.setType(MultipartBody.FORM);
+    }
     multipartBuilder.addPart(headers, body);
   }
 
   @SuppressWarnings("ConstantConditions") // Only called when isMultipart was true.
   void addPart(MultipartBody.Part part) {
-    multipartBuilder.addPart(part);
+    if (multipartBuilder != null) {
+      multipartBuilder.addPart(part);
+    } else {
+      throw new IllegalStateException("MultipartBuilder is not initialized.");
+    }
   }
 
   void setBody(@Nullable RequestBody body) {
