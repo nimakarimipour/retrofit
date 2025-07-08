@@ -2,7 +2,7 @@ apply plugin: 'java-library'
 
 dependencies {
   api project(':retrofit')
-  implementation 'com.squareup.okhttp3:okhttp:4.12.0'
+  implementation 'com.squareup.okhttp3:okhttp:3.14.9'
 
   compileOnly deps.findBugsAnnotations
 }
