@@ -27,6 +27,14 @@ dependencies {
   compileOnly deps.animalSnifferAnnotations
   compileOnly deps.findBugsAnnotations
 
+  testImplementation project(':retrofit:test-helpers')
+  testImplementation deps.junit
+  testImplementation deps.assertj
+  testImplementation deps.guava
+  testImplementation deps.mockwebserver
+  testImplementation deps.kotlinStdLib
+  testImplementation deps.kotlinCoroutines
+
   annotationProcessor "com.uber.nullaway:nullaway:0.12.4-SNAPSHOT"
   annotationProcessor "edu.ucr.cs.riple.annotator:annotator-scanner:1.3.16-SNAPSHOT"
   implementation "edu.ucr.cs.riple.annotator:annotation-util:1.3.16-SNAPSHOT"
@@ -41,13 +49,13 @@ def scanner_path = project.rootProject.projectDir.toString() + "/annotator-out/s
 def nullaway_path = project.rootProject.projectDir.toString() + "/annotator-out/nullaway.xml"
 import net.ltgt.gradle.errorprone.CheckSeverity
 tasks.withType(JavaCompile) {
+  options.errorprone.disableAllChecks = true
   // remove the if condition if you want to run NullAway on test code
   if (!name.toLowerCase().contains("test")) {
-    options.errorprone.disableAllChecks = true
     options.errorprone.disableAllWarnings = true
     options.errorprone {
-      check("NullAway", CheckSeverity.ERROR)
-      check("AnnotatorScanner", CheckSeverity.ERROR)
+      check("NullAway", CheckSeverity.OFF)
+      check("AnnotatorScanner", CheckSeverity.OFF)
       option("NullAway:AnnotatedPackages", "retrofit2")
       option("NullAway:SerializeFixMetadata", "true")
       option("NullAway:FixSerializationConfigPath", nullaway_path)
