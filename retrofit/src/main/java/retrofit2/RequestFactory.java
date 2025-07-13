@@ -777,7 +777,6 @@ final class RequestFactory {
         try {
           converter = retrofit.requestBodyConverter(type, annotations, methodAnnotations);
         } catch (RuntimeException e) {
-          // Wide exception range because factories are user code.
           throw parameterError(method, e, p, "Unable to create @Body converter for %s", type);
         }
         gotBody = true;
@@ -787,6 +786,11 @@ final class RequestFactory {
         validateResolvableType(p, type);
 
         Class<?> tagType = Utils.getRawType(type);
+
+        if (parameterHandlers == null) {
+          return null;
+        }
+
         for (int i = p - 1; i >= 0; i--) {
           ParameterHandler<?> otherHandler = parameterHandlers[i];
           if (otherHandler instanceof ParameterHandler.Tag
@@ -805,7 +809,7 @@ final class RequestFactory {
         return new ParameterHandler.Tag<>(tagType);
       }
 
-      return null; // Not a Retrofit annotation.
+      return null;
     }
 
     private void validateResolvableType(int p, Type type) {
