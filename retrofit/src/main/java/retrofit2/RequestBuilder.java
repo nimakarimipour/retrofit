@@ -182,24 +182,23 @@ final class RequestBuilder {
   }
 
   void addQueryParam(@Nullable String name, @Nullable String value, boolean encoded) {
-    if (relativeUrl != null) {
-      // Do a one-time combination of the built relative URL and the base URL.
-      urlBuilder = baseUrl.newBuilder(relativeUrl);
-      if (urlBuilder == null) {
-        throw new IllegalArgumentException(
-            "Malformed URL. Base: " + baseUrl + ", Relative: " + relativeUrl);
+      if (relativeUrl != null) {
+        urlBuilder = baseUrl.newBuilder(relativeUrl);
+        if (urlBuilder == null) {
+          throw new IllegalArgumentException(
+              "Malformed URL. Base: " + baseUrl + ", Relative: " + relativeUrl);
+        }
+        relativeUrl = null;
       }
-      relativeUrl = null;
+  
+      if (urlBuilder != null) {
+        if (encoded) {
+          urlBuilder.addEncodedQueryParameter(name, value);
+        } else {
+          urlBuilder.addQueryParameter(name, value);
+        }
+      }
     }
-
-    if (encoded) {
-      //noinspection ConstantConditions Checked to be non-null by above 'if' block.
-      urlBuilder.addEncodedQueryParameter(name, value);
-    } else {
-      //noinspection ConstantConditions Checked to be non-null by above 'if' block.
-      urlBuilder.addQueryParameter(name, value);
-    }
-  }
 
   @SuppressWarnings("ConstantConditions") // Only called when isFormEncoded was true.
   void addFormField(String name, String value, boolean encoded) {
