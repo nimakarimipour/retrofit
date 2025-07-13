@@ -209,10 +209,11 @@ final class RequestBuilder {
     }
   }
 
-  @SuppressWarnings("ConstantConditions") // Only called when isMultipart was true.
   void addPart(Headers headers, @Nullable RequestBody body) {
-    multipartBuilder.addPart(headers, body);
-  }
+      if (multipartBuilder != null) {
+        multipartBuilder.addPart(headers, body);
+      }
+    }
 
   void addPart(MultipartBody.Part part) {
       if (multipartBuilder != null) {
