@@ -29,6 +29,7 @@ import okio.BufferedSource;
 import okio.ForwardingSource;
 import okio.Okio;
 import okio.Timeout;
+import edu.ucr.cs.riple.annotator.util.Nullability;
 
 final class OkHttpCall<T> implements Call<T> {
   private final RequestFactory requestFactory;
@@ -113,72 +114,72 @@ final class OkHttpCall<T> implements Call<T> {
   }
 
   @Override
-  public void enqueue(final Callback<T> callback) {
-    Objects.requireNonNull(callback, "callback == null");
-
-    okhttp3.Call call;
-    Throwable failure;
-
-    synchronized (this) {
-      if (executed) throw new IllegalStateException("Already executed.");
-      executed = true;
-
-      call = rawCall;
-      failure = creationFailure;
-      if (call == null && failure == null) {
-        try {
-          call = rawCall = createRawCall();
-        } catch (Throwable t) {
-          throwIfFatal(t);
-          failure = creationFailure = t;
+    public void enqueue(final Callback<T> callback) {
+      Objects.requireNonNull(callback, "callback == null");
+  
+      okhttp3.Call call;
+      Throwable failure;
+  
+      synchronized (this) {
+        if (executed) throw new IllegalStateException("Already executed.");
+        executed = true;
+  
+        call = rawCall;
+        failure = creationFailure;
+        if (call == null && failure == null) {
+          try {
+            call = rawCall = createRawCall();
+          } catch (Throwable t) {
+            throwIfFatal(t);
+            failure = creationFailure = t;
+          }
         }
       }
-    }
-
-    if (failure != null) {
-      callback.onFailure(this, failure);
-      return;
-    }
-
-    if (canceled) {
-      call.cancel();
-    }
-
-    call.enqueue(
-        new okhttp3.Callback() {
-          @Override
-          public void onResponse(okhttp3.Call call, okhttp3.Response rawResponse) {
-            Response<T> response;
-            try {
-              response = parseResponse(rawResponse);
-            } catch (Throwable e) {
-              throwIfFatal(e);
+  
+      if (failure != null) {
+        callback.onFailure(this, failure);
+        return;
+      }
+  
+      if (canceled) {
+        call.cancel();
+      }
+  
+      Nullability.castToNonnull(call, "initialized if null").enqueue(
+          new okhttp3.Callback() {
+            @Override
+            public void onResponse(okhttp3.Call call, okhttp3.Response rawResponse) {
+              Response<T> response;
+              try {
+                response = parseResponse(rawResponse);
+              } catch (Throwable e) {
+                throwIfFatal(e);
+                callFailure(e);
+                return;
+              }
+  
+              try {
+                callback.onResponse(OkHttpCall.this, response);
+              } catch (Throwable t) {
+                throwIfFatal(t);
+                t.printStackTrace(); // TODO this is not great
+              }
+            }
+  
+            @Override
+            public void onFailure(okhttp3.Call call, IOException e) {
               callFailure(e);
-              return;
             }
-
-            try {
-              callback.onResponse(OkHttpCall.this, response);
-            } catch (Throwable t) {
-              throwIfFatal(t);
-              t.printStackTrace(); // TODO this is not great
+  
+            private void callFailure(Throwable e) {
+              try {
+                callback.onFailure(OkHttpCall.this, e);
+              } catch (Throwable t) {
+                throwIfFatal(t);
+                t.printStackTrace(); // TODO this is not great
+              }
             }
-          }
-
-          @Override
-          public void onFailure(okhttp3.Call call, IOException e) {
-            callFailure(e);
-          }
-
-          private void callFailure(Throwable e) {
-            try {
-              callback.onFailure(OkHttpCall.this, e);
-            } catch (Throwable t) {
-              throwIfFatal(t);
-              t.printStackTrace(); // TODO this is not great
-            }
-          }
-        });
+          });
   }
 
   @Override
