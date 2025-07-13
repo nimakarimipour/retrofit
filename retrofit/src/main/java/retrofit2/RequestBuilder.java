@@ -15,7 +15,6 @@
  */
 package retrofit2;
 
-import edu.ucr.cs.riple.annotator.util.Nullability;
 import java.io.IOException;
 import java.util.regex.Pattern;
 import javax.annotation.Nullable;
@@ -184,6 +183,7 @@ final class RequestBuilder {
 
   void addQueryParam(@Nullable String name, @Nullable String value, boolean encoded) {
     if (relativeUrl != null) {
+      // Do a one-time combination of the built relative URL and the base URL.
       urlBuilder = baseUrl.newBuilder(relativeUrl);
       if (urlBuilder == null) {
         throw new IllegalArgumentException(
@@ -193,10 +193,11 @@ final class RequestBuilder {
     }
 
     if (encoded) {
-      Nullability.castToNonnull(urlBuilder, "already checked in if")
-          .addEncodedQueryParameter(name, value);
+      //noinspection ConstantConditions Checked to be non-null by above 'if' block.
+      urlBuilder.addEncodedQueryParameter(name, value);
     } else {
-      Nullability.castToNonnull(urlBuilder, "already checked in if").addQueryParameter(name, value);
+      //noinspection ConstantConditions Checked to be non-null by above 'if' block.
+      urlBuilder.addQueryParameter(name, value);
     }
   }
 
