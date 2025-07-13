@@ -18,7 +18,6 @@ package retrofit2;
 import static retrofit2.Utils.methodError;
 import static retrofit2.Utils.parameterError;
 
-import edu.ucr.cs.riple.annotator.util.Nullability;
 import java.io.IOException;
 import java.lang.annotation.Annotation;
 import java.lang.reflect.Method;
@@ -99,7 +98,7 @@ final class RequestFactory {
     ParameterHandler<Object>[] handlers = (ParameterHandler<Object>[]) parameterHandlers;
 
     int argumentCount = args.length;
-    if (argumentCount != Nullability.castToNonnull(handlers, "initialized directly").length) {
+    if (argumentCount != handlers.length) {
       throw new IllegalArgumentException(
           "Argument count ("
               + argumentCount
