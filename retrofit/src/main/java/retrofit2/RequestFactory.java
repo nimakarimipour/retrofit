@@ -94,43 +94,47 @@ final class RequestFactory {
   }
 
   okhttp3.Request create(Object[] args) throws IOException {
-    @SuppressWarnings("unchecked") // It is an error to invoke a method with the wrong arg types.
-    ParameterHandler<Object>[] handlers = (ParameterHandler<Object>[]) parameterHandlers;
-
-    int argumentCount = args.length;
-    if (argumentCount != handlers.length) {
-      throw new IllegalArgumentException(
-          "Argument count ("
-              + argumentCount
-              + ") doesn't match expected count ("
-              + handlers.length
-              + ")");
+        @SuppressWarnings("unchecked") // It is an error to invoke a method with the wrong arg types.
+        ParameterHandler<Object>[] handlers = (ParameterHandler<Object>[]) parameterHandlers;
+    
+        if (handlers == null) {
+          throw new NullPointerException("Parameter handlers array is null");
+        }
+    
+        int argumentCount = args.length;
+        if (argumentCount != handlers.length) {
+          throw new IllegalArgumentException(
+              "Argument count ("
+                  + argumentCount
+                  + ") doesn't match expected count ("
+                  + handlers.length
+                  + ")");
+        }
+    
+        RequestBuilder requestBuilder =
+            new RequestBuilder(
+                httpMethod,
+                baseUrl,
+                relativeUrl,
+                headers,
+                contentType,
+                hasBody,
+                isFormEncoded,
+                isMultipart);
+    
+        if (isKotlinSuspendFunction) {
+          // The Continuation is the last parameter and the handlers array contains null at that index.
+          argumentCount--;
+        }
+    
+        List<Object> argumentList = new ArrayList<>(argumentCount);
+        for (int p = 0; p < argumentCount; p++) {
+          argumentList.add(args[p]);
+          handlers[p].apply(requestBuilder, args[p]);
+        }
+    
+        return requestBuilder.get().tag(Invocation.class, new Invocation(method, argumentList)).build();
     }
-
-    RequestBuilder requestBuilder =
-        new RequestBuilder(
-            httpMethod,
-            baseUrl,
-            relativeUrl,
-            headers,
-            contentType,
-            hasBody,
-            isFormEncoded,
-            isMultipart);
-
-    if (isKotlinSuspendFunction) {
-      // The Continuation is the last parameter and the handlers array contains null at that index.
-      argumentCount--;
-    }
-
-    List<Object> argumentList = new ArrayList<>(argumentCount);
-    for (int p = 0; p < argumentCount; p++) {
-      argumentList.add(args[p]);
-      handlers[p].apply(requestBuilder, args[p]);
-    }
-
-    return requestBuilder.get().tag(Invocation.class, new Invocation(method, argumentList)).build();
-  }
 
   /**
    * Inspects the annotations on an interface method to construct a reusable service method. This
