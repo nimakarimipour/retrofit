@@ -140,45 +140,47 @@ final class OkHttpCall<T> implements Call<T> {
       return;
     }
 
-    if (canceled) {
+    if (canceled && call != null) {
       call.cancel();
     }
 
-    call.enqueue(
-        new okhttp3.Callback() {
-          @Override
-          public void onResponse(okhttp3.Call call, okhttp3.Response rawResponse) {
-            Response<T> response;
-            try {
-              response = parseResponse(rawResponse);
-            } catch (Throwable e) {
-              throwIfFatal(e);
+    if (call != null) {
+      call.enqueue(
+          new okhttp3.Callback() {
+            @Override
+            public void onResponse(okhttp3.Call call, okhttp3.Response rawResponse) {
+              Response<T> response;
+              try {
+                response = parseResponse(rawResponse);
+              } catch (Throwable e) {
+                throwIfFatal(e);
+                callFailure(e);
+                return;
+              }
+
+              try {
+                callback.onResponse(OkHttpCall.this, response);
+              } catch (Throwable t) {
+                throwIfFatal(t);
+                t.printStackTrace(); // TODO this is not great
+              }
+            }
+
+            @Override
+            public void onFailure(okhttp3.Call call, IOException e) {
               callFailure(e);
-              return;
             }
 
-            try {
-              callback.onResponse(OkHttpCall.this, response);
-            } catch (Throwable t) {
-              throwIfFatal(t);
-              t.printStackTrace(); // TODO this is not great
+            private void callFailure(Throwable e) {
+              try {
+                callback.onFailure(OkHttpCall.this, e);
+              } catch (Throwable t) {
+                throwIfFatal(t);
+                t.printStackTrace(); // TODO this is not great
+              }
             }
-          }
-
-          @Override
-          public void onFailure(okhttp3.Call call, IOException e) {
-            callFailure(e);
-          }
-
-          private void callFailure(Throwable e) {
-            try {
-              callback.onFailure(OkHttpCall.this, e);
-            } catch (Throwable t) {
-              throwIfFatal(t);
-              t.printStackTrace(); // TODO this is not great
-            }
-          }
-        });
+          });
+    }
   }
 
   @Override
