@@ -787,18 +787,20 @@ final class RequestFactory {
         validateResolvableType(p, type);
 
         Class<?> tagType = Utils.getRawType(type);
-        for (int i = p - 1; i >= 0; i--) {
-          ParameterHandler<?> otherHandler = parameterHandlers[i];
-          if (otherHandler instanceof ParameterHandler.Tag
-              && ((ParameterHandler.Tag) otherHandler).cls.equals(tagType)) {
-            throw parameterError(
-                method,
-                p,
-                "@Tag type "
-                    + tagType.getName()
-                    + " is duplicate of parameter #"
-                    + (i + 1)
-                    + " and would always overwrite its value.");
+        if (parameterHandlers != null) {
+          for (int i = p - 1; i >= 0; i--) {
+            ParameterHandler<?> otherHandler = parameterHandlers[i];
+            if (otherHandler instanceof ParameterHandler.Tag
+                && ((ParameterHandler.Tag) otherHandler).cls.equals(tagType)) {
+              throw parameterError(
+                  method,
+                  p,
+                  "@Tag type "
+                      + tagType.getName()
+                      + " is duplicate of parameter #"
+                      + (i + 1)
+                      + " and would always overwrite its value.");
+            }
           }
         }
 
