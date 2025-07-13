@@ -27,6 +27,7 @@ import okhttp3.Request;
 import okhttp3.RequestBody;
 import okio.Buffer;
 import okio.BufferedSink;
+import edu.ucr.cs.riple.annotator.util.Nullability;
 
 final class RequestBuilder {
   private static final char[] HEX_DIGITS = {
@@ -181,24 +182,21 @@ final class RequestBuilder {
     }
   }
 
-  void addQueryParam(@Nullable String name, @Nullable String value, boolean encoded) {
-    if (relativeUrl != null) {
-      // Do a one-time combination of the built relative URL and the base URL.
-      urlBuilder = baseUrl.newBuilder(relativeUrl);
-      if (urlBuilder == null) {
-        throw new IllegalArgumentException(
-            "Malformed URL. Base: " + baseUrl + ", Relative: " + relativeUrl);
+  void addQueryParam( @Nullable String name,  @Nullable String value, boolean encoded) {
+      if (relativeUrl != null) {
+        urlBuilder = baseUrl.newBuilder(relativeUrl);
+        if (urlBuilder == null) {
+          throw new IllegalArgumentException(
+              "Malformed URL. Base: " + baseUrl + ", Relative: " + relativeUrl);
+        }
+        relativeUrl = null;
       }
-      relativeUrl = null;
-    }
-
-    if (encoded) {
-      //noinspection ConstantConditions Checked to be non-null by above 'if' block.
-      urlBuilder.addEncodedQueryParameter(name, value);
-    } else {
-      //noinspection ConstantConditions Checked to be non-null by above 'if' block.
-      urlBuilder.addQueryParameter(name, value);
-    }
+  
+      if (encoded) {
+        Nullability.castToNonnull(urlBuilder, "initialization cannot fail").addEncodedQueryParameter(name, value);
+      } else {
+        urlBuilder.addQueryParameter(name, value);
+      }
   }
 
   @SuppressWarnings("ConstantConditions") // Only called when isFormEncoded was true.
