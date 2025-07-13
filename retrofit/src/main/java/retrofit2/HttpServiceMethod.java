@@ -47,9 +47,14 @@ abstract class HttpServiceMethod<ResponseT, ReturnT> extends ServiceMethod<Retur
           Utils.getParameterLowerBound(
               0, (ParameterizedType) parameterTypes[parameterTypes.length - 1]);
       if (getRawType(responseType) == Response.class && responseType instanceof ParameterizedType) {
+        // Unwrap the actual body type from Response<T>.
         responseType = Utils.getParameterUpperBound(0, (ParameterizedType) responseType);
         continuationWantsResponse = true;
       } else {
+        // TODO figure out if type is nullable or not
+        // Metadata metadata = method.getDeclaringClass().getAnnotation(Metadata.class)
+        // Find the entry for method
+        // Determine if return type is nullable or not
       }
 
       adapterType = new Utils.ParameterizedTypeImpl(null, Call.class, responseType);
@@ -71,7 +76,8 @@ abstract class HttpServiceMethod<ResponseT, ReturnT> extends ServiceMethod<Retur
     if (responseType == Response.class) {
       throw methodError(method, "Response must include generic type (e.g., Response<String>)");
     }
-    if ("HEAD".equals(requestFactory.httpMethod) && !Void.class.equals(responseType)) {
+    // TODO support Unit for Kotlin?
+    if (requestFactory.httpMethod.equals("HEAD") && !Void.class.equals(responseType)) {
       throw methodError(method, "HEAD method must use Void as response type.");
     }
 
@@ -82,6 +88,7 @@ abstract class HttpServiceMethod<ResponseT, ReturnT> extends ServiceMethod<Retur
     if (!isKotlinSuspendFunction) {
       return new CallAdapted<>(requestFactory, callFactory, responseConverter, callAdapter);
     } else if (continuationWantsResponse) {
+      //noinspection unchecked Kotlin compiler guarantees ReturnT to be Object.
       return (HttpServiceMethod<ResponseT, ReturnT>)
           new SuspendForResponse<>(
               requestFactory,
@@ -89,6 +96,7 @@ abstract class HttpServiceMethod<ResponseT, ReturnT> extends ServiceMethod<Retur
               responseConverter,
               (CallAdapter<ResponseT, Call<ResponseT>>) callAdapter);
     } else {
+      //noinspection unchecked Kotlin compiler guarantees ReturnT to be Object.
       return (HttpServiceMethod<ResponseT, ReturnT>)
           new SuspendForBody<>(
               requestFactory,
