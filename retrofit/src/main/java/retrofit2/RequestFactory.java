@@ -816,19 +816,19 @@ final class RequestFactory {
     }
 
     private void validatePathName(int p, String name) {
-      if (!PARAM_NAME_REGEX.matcher(name).matches()) {
-        throw parameterError(
-            method,
-            p,
-            "@Path parameter name must match %s. Found: %s",
-            PARAM_URL_REGEX.pattern(),
-            name);
+          if (!PARAM_NAME_REGEX.matcher(name).matches()) {
+              throw parameterError(
+                  method,
+                  p,
+                  "@Path parameter name must match %s. Found: %s",
+                  PARAM_URL_REGEX.pattern(),
+                  name);
+          }
+          // Verify URL replacement name is actually present in the URL path.
+          if (relativeUrlParamNames != null && !relativeUrlParamNames.contains(name)) {
+              throw parameterError(method, p, "URL \"%s\" does not contain \"{%s}\".", relativeUrl, name);
+          }
       }
-      // Verify URL replacement name is actually present in the URL path.
-      if (!relativeUrlParamNames.contains(name)) {
-        throw parameterError(method, p, "URL \"%s\" does not contain \"{%s}\".", relativeUrl, name);
-      }
-    }
 
     /**
      * Gets the set of unique path parameters used in the given URI. If a parameter is used twice in
