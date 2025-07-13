@@ -131,6 +131,9 @@ final class RequestBuilder {
   }
 
   private static String canonicalizeForPath(@Nullable String input, boolean alreadyEncoded) {
+    if (input == null) {
+      throw new NullPointerException("Input must not be null");
+    }
     int codePoint;
     for (int i = 0, limit = input.length(); i < limit; i += Character.charCount(codePoint)) {
       codePoint = input.codePointAt(i);
@@ -138,15 +141,12 @@ final class RequestBuilder {
           || codePoint >= 0x7f
           || PATH_SEGMENT_ALWAYS_ENCODE_SET.indexOf(codePoint) != -1
           || (!alreadyEncoded && (codePoint == '/' || codePoint == '%'))) {
-        // Slow path: the character at i requires encoding!
         Buffer out = new Buffer();
         out.writeUtf8(input, 0, i);
         canonicalizeForPath(out, input, i, limit, alreadyEncoded);
         return out.readUtf8();
       }
     }
-
-    // Fast path: no characters required encoding.
     return input;
   }
 
