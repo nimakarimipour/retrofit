@@ -200,14 +200,15 @@ final class RequestBuilder {
       }
     }
 
-  @SuppressWarnings("ConstantConditions") // Only called when isFormEncoded was true.
   void addFormField(String name, String value, boolean encoded) {
-    if (encoded) {
-      formBuilder.addEncoded(name, value);
-    } else {
-      formBuilder.add(name, value);
+      if (formBuilder != null) {
+        if (encoded) {
+          formBuilder.addEncoded(name, value);
+        } else {
+          formBuilder.add(name, value);
+        }
+      }
     }
-  }
 
   void addPart(Headers headers, @Nullable RequestBody body) {
       if (multipartBuilder != null) {
