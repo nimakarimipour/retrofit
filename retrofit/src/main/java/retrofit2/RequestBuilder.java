@@ -201,8 +201,10 @@ final class RequestBuilder {
     }
   }
 
-  @SuppressWarnings("ConstantConditions") // Only called when isFormEncoded was true.
   void addFormField(String name, String value, boolean encoded) {
+    if (formBuilder == null) {
+      throw new IllegalStateException("formBuilder is not initialized");
+    }
     if (encoded) {
       formBuilder.addEncoded(name, value);
     } else {
