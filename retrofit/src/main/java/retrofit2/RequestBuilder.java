@@ -62,7 +62,7 @@ final class RequestBuilder {
 
   private final boolean hasBody;
   @Nullable private MultipartBody.Builder multipartBuilder;
-  private @Nullable FormBody.Builder formBuilder;
+  @Nullable private FormBody.Builder formBuilder;
   private @Nullable RequestBody body;
 
   RequestBuilder(
@@ -200,13 +200,16 @@ final class RequestBuilder {
   }
 
   @SuppressWarnings("ConstantConditions") // Only called when isFormEncoded was true.
-  void addFormField(String name, String value, boolean encoded) {
-    if (encoded) {
-      formBuilder.addEncoded(name, value);
-    } else {
-      formBuilder.add(name, value);
+    void addFormField(String name, String value, boolean encoded) {
+      if (formBuilder == null) {
+        throw new IllegalStateException("FormBuilder is null. This method should only be called when form encoding is enabled.");
+      }
+      if (encoded) {
+        formBuilder.addEncoded(name, value);
+      } else {
+        formBuilder.add(name, value);
+      }
     }
-  }
 
   @SuppressWarnings("ConstantConditions") // Only called when isMultipart was true.
     void addPart(Headers headers, @Nullable RequestBody body) {
